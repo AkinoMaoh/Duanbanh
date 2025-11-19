@@ -1,3 +1,4 @@
+1
 <?php
 include_once("Model/DanhMuc.php");
 class DanhMucController
