@@ -1,9 +1,11 @@
 <?php
 include_once("Controller/DanhMucController.php");
 include_once("Controller/SanPhamController.php");
+include_once("Controller/HoaDonController.php");
 
 $danhMuc = new DanhMucController();
 $sanPham = new SanPhamController();
+$hoaDon = new HoaDonController();
 if(isset($_GET['action']) && $_GET['action'] != "") {
 $action = $_GET['action'];
     switch($action) {
@@ -49,6 +51,12 @@ $action = $_GET['action'];
             break;
         case "restoresanpham":
             $sanPham->restore();
+            break;
+        case "listhoadon":
+            $hoaDon->index();
+            break;
+        case "chitiethoadon":
+            $hoaDon->invoiceDetails();
             break;
     }
 } else {
