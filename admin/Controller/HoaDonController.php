@@ -2,7 +2,8 @@
 include_once("Model/HoaDon.php");
 class HoaDonController
 {
-    private $hoadon;
+    private $hoaDon;
+    private $danhMuc;
 
     public function __construct()
     {
