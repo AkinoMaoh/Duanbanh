@@ -15,14 +15,14 @@
     />
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css" />
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css" />
-    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css" />
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css" />
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css" />
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="views/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="views/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="views/css/elegant-icons.css" type="text/css" />
+    <link rel="stylesheet" href="views/css/nice-select.css" type="text/css" />
+    <link rel="stylesheet" href="views/css/jquery-ui.min.css" type="text/css" />
+    <link rel="stylesheet" href="views/css/owl.carousel.min.css" type="text/css" />
+    <link rel="stylesheet" href="views/css/slicknav.min.css" type="text/css" />
+    <link rel="stylesheet" href="views/css/style.css" type="text/css" />
   </head>
 
   <body>
@@ -35,7 +35,7 @@
     <div class="humberger__menu__overlay"></div>
     <div class="humberger__menu__wrapper">
       <div class="humberger__menu__logo">
-        <a href="#"><img src="img/logo.jpg" alt="" /></a>
+        <a href="#"><img src="views/img/logo.jpg" alt="" /></a>
       </div>
       <div class="humberger__menu__cart">
         <ul>
@@ -50,7 +50,7 @@
       </div>
       <div class="humberger__menu__widget">
         <div class="header__top__right__language">
-          <img src="img/language.png" alt="" />
+          <img src="views/img/language.png" alt="" />
           <div>English</div>
           <span class="arrow_carrot-down"></span>
           <ul>
@@ -117,7 +117,7 @@
                   <a href="#"><i class="fa fa-pinterest-p"></i></a>
                 </div>
                 <div class="header__top__right__language">
-                  <img src="img/language.png" alt="" />
+                  <img src="views/img/language.png" alt="" />
                   <div>English</div>
                   <span class="arrow_carrot-down"></span>
                   <ul>
@@ -137,7 +137,7 @@
         <div class="row">
           <div class="col-lg-3">
             <div class="header__logo">
-              <a href="./index.html"><img src="img/logo.jpg" alt="" /></a>
+              <a href="./index.html"><img src="views/img/logo.jpg" alt="" /></a>
             </div>
           </div>
           <div class="col-lg-6">
