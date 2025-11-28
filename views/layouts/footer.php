@@ -5,7 +5,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__about">
                         <div class="footer__about__logo">
-                            <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                            <a href="./index.html"><img src="views/img/logo.png" alt=""></a>
                         </div>
                         <ul>
                             <li>Address: 60-49 Road 11378 New York</li>
@@ -67,14 +67,14 @@
     <!-- Footer Section End -->
 
     <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/mixitup.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="views/js/jquery-3.3.1.min.js"></script>
+    <script src="views/js/bootstrap.min.js"></script>
+    <script src="views/js/jquery.nice-select.min.js"></script>
+    <script src="views/js/jquery-ui.min.js"></script>
+    <script src="views/js/jquery.slicknav.js"></script>
+    <script src="views/js/mixitup.min.js"></script>
+    <script src="views/js/owl.carousel.min.js"></script>
+    <script src="views/js/main.js"></script>
 
 
 
