@@ -1,13 +1,14 @@
 <?php 
+include_once("Controller/HomeController.php");
+$home = new HomeController();
 if(isset($_GET['action']) && $_GET['action'] != "") {
-$action = $_GET['action'];
+    $action = $_GET['action'];
     switch($action) {
         case "home":
-            include_once("views/home.php");
+            $home->home();    // chỉ gọi controller
             break;
-      
     }
 } else {
-    include_once("views/home.php");
+    $home->home();    // mặc định load trang home qua controller
 }
 ?>
