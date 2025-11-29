@@ -17,5 +17,8 @@ class HomeController {
         
         include_once("views/home.php");
     }
+    public function aboutUs() {
+        include_once("views/aboutUs.php");
+}
 }
 ?>
