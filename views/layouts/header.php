@@ -143,7 +143,7 @@
           <div class="col-lg-6">
             <nav class="header__menu">
               <ul>
-                <li class="active"><a href="./index.html">Home</a></li>
+                <li class="active"><a href="index.php?action=home">Home</a></li>
                 <li><a href="./shop-grid.html">Shop</a></li>
                 <li>
                   <a href="#">Pages</a>
@@ -154,7 +154,7 @@
                     <li><a href="./blog-details.html">Blog Details</a></li>
                   </ul>
                 </li>
-                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="index.php?action=aboutUs">About us</a></li>
                 <li><a href="./contact.html">Contact</a></li>
               </ul>
             </nav>
