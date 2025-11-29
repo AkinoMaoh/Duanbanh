@@ -148,10 +148,10 @@
                 <li>
                   <a href="#">Pages</a>
                   <ul class="header__menu__dropdown">
-                    <li><a href="./shop-details.html">Shop Details</a></li>
-                    <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                    <li><a href="./checkout.html">Check Out</a></li>
-                    <li><a href="./blog-details.html">Blog Details</a></li>
+                    <li><a href="./shop-details.html">Top 10 sản phẩm nổi bật</a></li>
+                    <li><a href="./shoping-cart.html">Giỏ hàng</a></li>
+                    <li><a href="./checkout.html">Thanh toán</a></li>
+                    
                   </ul>
                 </li>
                 <li><a href="index.php?action=aboutUs">About us</a></li>
