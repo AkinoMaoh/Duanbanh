@@ -149,8 +149,8 @@
                   <a href="#">Pages</a>
                   <ul class="header__menu__dropdown">
                     <li><a href="./shop-details.html">Top 10 sản phẩm nổi bật</a></li>
-                    <li><a href="./shoping-cart.html">Giỏ hàng</a></li>
-                    <li><a href="./checkout.html">Thanh toán</a></li>
+                    <li><a href="index.php?action=cart">Giỏ hàng</a></li>
+                    <li><a href="index.php?action=showcheckout">Thanh toán</a></li>
                     
                   </ul>
                 </li>
