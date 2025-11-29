@@ -21,17 +21,17 @@
                 'email'=> 'duongquocanh@gmail.com'
             ],
             [
-                'name' => 'Nguyễn Thành Trung',
+                'name' => 'Đặng Thành Trung',
                 'role' => 'Lập trình viên Back-end',
                 'email'=> 'nguyenthanhtrung@example.com',
                 'bio'  => 'Phát triển API và xử lý cơ sở dữ liệu.',
-                'img'  => '/assets/images/thi-b.jpg'
+                'img'  => 'views/img/aboutUs/trung.jpg'
             ],
             [
                 'name' => 'Nguyễn Văn Trung',
                 'role' => 'Front-end Developer',
                 'bio'  => 'Thiết kế giao diện và trải nghiệm người dùng.',
-                'img'  => '/assets/images/van-c.jpg',
+                'img'  => 'views/img/aboutUs/trung.jpg',
                 'email'=> 'nguyenvantrung@example.com'
             ],
             [

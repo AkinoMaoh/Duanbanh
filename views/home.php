@@ -21,12 +21,9 @@
             <div class="hero__search">
               <div class="hero__search__form">
                 <form action="#">
-                  <div class="hero__search__categories">
-                    All Categories
-                    <span class="arrow_carrot-down"></span>
-                  </div>
-                  <input type="text" placeholder="What do yo u need?" />
-                  <button type="submit" class="site-btn">SEARCH</button>
+                  
+                  <input type="text" placeholder="Nhập sản phẩm cần tìm" />
+                  <button type="submit" class="site-btn">Tìm kiếm</button>
                 </form>
               </div>
               <div class="hero__search__phone">
@@ -93,7 +90,7 @@
               <div
                 class="featured__item__pic set-bg"
                 data-setbg="admin/<?php echo isset($item['img']) ? $item['img'] : 'default.png'; ?>">
-              >
+              
             
                 <ul class="featured__item__pic__hover">
                   <li>
@@ -103,7 +100,7 @@
                     <a href="#"><i class="fa fa-retweet"></i></a>
                   </li>
                   <li>
-                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                    <a href="index.php?action=addtocart&idsp=<?= $item['id']; ?>"><i class="fa fa-shopping-cart"></i></a>
                   </li>
                 </ul>
               </div>

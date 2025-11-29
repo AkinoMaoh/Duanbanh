@@ -64,6 +64,13 @@
                                 <span>Hóa đơn</span>
                             </a>
                         </li>
+                        <li
+                            class="sidebar-item <?= str_contains($_SERVER['REQUEST_URI'], "thongke") ? 'active' : '' ?>">
+                            <a href="index.php?action=listthongke" class='sidebar-link'>
+                                <i class="bi bi-file-earmark-spreadsheet-fill"></i>
+                                <span>Thống kê</span>
+                            </a>
+                        </li>
 
                     </ul>
                 </div>
