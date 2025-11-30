@@ -155,7 +155,7 @@
                   </ul>
                 </li>
                 <li><a href="index.php?action=aboutUs">About us</a></li>
-                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="index.php?action=contact">Contact</a></li>
               </ul>
             </nav>
           </div>

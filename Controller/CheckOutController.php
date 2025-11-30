@@ -10,7 +10,7 @@ class CheckOutController {
     public function add(){
         if(isset($_GET['idsp'])) {
             $idSp = $_GET['idsp'];
-            if(isset($_SESSION['cart'])){
+            if(!isset($_SESSION['cart'])){
                 $_SESSION['cart'] = [];
             }
             $tonTaiSP = false;

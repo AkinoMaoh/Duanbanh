@@ -15,6 +15,9 @@ if(isset($_GET['action']) && $_GET['action'] != "") {
         case "aboutUs":
             $home->aboutUs();   
             break;
+        case "contact":
+            $home->contact();   
+            break;
         case "addtocart":
             $cart->add();   
             break;
