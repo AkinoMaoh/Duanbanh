@@ -1,4 +1,16 @@
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px 0;
+    }
+    .container {
+        margin-bottom:50px;
 
+    }
+</style>
 <?php include_once("layouts/header.php"); ?>
 
 <div class="container mt-5">
