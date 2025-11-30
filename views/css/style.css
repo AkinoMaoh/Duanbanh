@@ -2285,7 +2285,25 @@ ol {
   width: 100%;
   margin-top: 10px;
 }
+.checkout__order ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
 
+.checkout__order ul li span {
+  float: none !important;
+  min-width: 80px;
+  text-align: right;
+}
+.checkout__order__products {
+  display: flex;
+  justify-content: space-between;
+}
+.checkout__order__products span {
+  float: none;
+}
 /*---------------------
   Blog
 -----------------------*/
