@@ -46,7 +46,7 @@
             <a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a>
           </li>
         </ul>
-        <div class="header__cart__price">item: <span>$150.00</span></div>
+        <div class="header__cart__price"><span></span></div>
       </div>
       <div class="humberger__menu__widget">
         <div class="header__top__right__language">
@@ -54,29 +54,29 @@
           <div>English</div>
           <span class="arrow_carrot-down"></span>
           <ul>
-            <li><a href="#">Spanis</a></li>
+            <li><a href="#">VietNam</a></li>
             <li><a href="#">English</a></li>
           </ul>
         </div>
         <div class="header__top__right__auth">
-          <a href="#"><i class="fa fa-user"></i> Login</a>
+          <a href="#"><i class="fa fa-user"></i> Đăng nhập</a>
         </div>
       </div>
       <nav class="humberger__menu__nav mobile-menu">
         <ul>
-          <li class="active"><a href="./index.html">Home</a></li>
+          <li class="active"><a href="./index.html">Trang chủ</a></li>
           <li><a href="./shop-grid.html">Shop</a></li>
           <li>
             <a href="#">Pages</a>
             <ul class="header__menu__dropdown">
-              <li><a href="./shop-details.html">Shop Details</a></li>
-              <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-              <li><a href="./checkout.html">Check Out</a></li>
-              <li><a href="./blog-details.html">Blog Details</a></li>
+              <li><a href="./shop-details.html">Chi tiết cửa hàng</a></li>
+              <li><a href="./shoping-cart.html">Giỏ hàng</a></li>
+              <li><a href="./checkout.html">Kiểm tra</a></li>
+              <li><a href="./blog-details.html">Chi tiết blog</a></li>
             </ul>
           </li>
           <li><a href="./blog.html">Blog</a></li>
-          <li><a href="./contact.html">Contact</a></li>
+          <li><a href="./contact.html">Liên hệ</a></li>
         </ul>
       </nav>
       <div id="mobile-menu-wrap"></div>
@@ -88,8 +88,8 @@
       </div>
       <div class="humberger__menu__contact">
         <ul>
-          <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-          <li>Free Shipping for all Order of $99</li>
+          <li><i class="fa fa-envelope"></i> bakery@gmail.com</li>
+          <li>Miến phí ship cho tất cả đơn từ 1 triệu đồng</li>
         </ul>
       </div>
     </div>
@@ -103,8 +103,8 @@
             <div class="col-lg-6 col-md-6">
               <div class="header__top__left">
                 <ul>
-                  <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-                  <li>Free Shipping for all Order of $99</li>
+                  <li><i class="fa fa-envelope"></i> bakery@gmail.com</li>
+                  <li>Miến phí ship cho tất cả đơn từ 1 triệu đồng</li>
                 </ul>
               </div>
             </div>
@@ -121,12 +121,12 @@
                   <div>English</div>
                   <span class="arrow_carrot-down"></span>
                   <ul>
-                    <li><a href="#">Spanis</a></li>
+                    <li><a href="#">VietNam</a></li>
                     <li><a href="#">English</a></li>
                   </ul>
                 </div>
                 <div class="header__top__right__auth">
-                  <a href="#"><i class="fa fa-user"></i> Login</a>
+                  <a href="#"><i class="fa fa-user"></i> Đăng nhập</a>
                 </div>
               </div>
             </div>
@@ -143,7 +143,7 @@
           <div class="col-lg-6">
             <nav class="header__menu">
               <ul>
-                <li class="active"><a href="index.php?action=home">Home</a></li>
+                <li class="active"><a href="index.php?action=home">Trang chủ</a></li>
                 <li><a href="./shop-grid.html">Shop</a></li>
                 <li>
                   <a href="#">Pages</a>
@@ -155,7 +155,7 @@
                   </ul>
                 </li>
                 <li><a href="index.php?action=aboutUs">About us</a></li>
-                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./contact.html">Liên hệ</a></li>
               </ul>
             </nav>
           </div>
