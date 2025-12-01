@@ -20,7 +20,7 @@ include_once("views/layouts/header.php");
     <section class="section">
         <div class="card">
             <div class="card-body">
-                <a href="?action=top10spnew" class="btn btn-primary"> Top 10 sản phẩm mới nhất </a>
+                <a href="?action=listthongke" class="btn btn-primary"> Quay lại </a>
                 <a href="?action=top10spbanchaynhat" class="btn btn-primary"> Top 10 sản phẩm bán chạy nhất </a>
                 <table class="table table-striped" id="table1">
                     <thead>
@@ -31,12 +31,12 @@ include_once("views/layouts/header.php");
                             <th class="col-1">Giá sp</th>
                             <th class="col-1">Ảnh</th>
                             <th class="col-3">Mô tả</th>
-                            <th class="col-1">Trạng thái</th>
+                      
                             
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($allSanPham as $item) { ?>
+                        <?php foreach ($productsNew as $item) { ?>
                             <tr>
                                 <td><?= $item['id'] ?></td>
                                 <td><?= $item['tendanhmuc'] ?></td>
@@ -44,15 +44,7 @@ include_once("views/layouts/header.php");
                                 <td><?= $item['price'] ?> VND</td>
                                 <td><img width="100px" src="./<?= $item['img'] ?>" alt=""></td>
                                 <td><?= $item['mota'] ?></td>
-                               <td>
-                                    <?php 
-                                        if ($item['deleted'] == 0) {
-                                            echo '<span style="color: green;">Hoạt động</span>';
-                                        } else {
-                                            echo '<span style="color: red;">Tạm khoá</span>';
-                                        }
-                                    ?>
-                                </td>
+                               
                               
                             </tr>
                         <?php } ?>

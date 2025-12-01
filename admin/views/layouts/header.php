@@ -36,12 +36,12 @@
                     <ul class="menu">
                         <li class="sidebar-title">Menu</li>
 
-                        <li class="sidebar-item  ">
-                            <a href="index.html" class='sidebar-link'>
+                        <!-- <li class="sidebar-item  ">
+                            <a href="index.php?action=home" class='sidebar-link'>
                                 <i class="bi bi-grid-fill"></i>
                                 <span>Trang chủ</span>
                             </a>
-                        </li>
+                        </li> -->
 
                         <li
                             class="sidebar-item <?= str_contains($_SERVER['REQUEST_URI'], "danhmuc") ? 'active' : '' ?>">

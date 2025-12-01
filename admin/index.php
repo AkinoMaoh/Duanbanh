@@ -63,6 +63,13 @@ $action = $_GET['action'];
         case "listthongke":
             $thongKe->index();
             break;
+        case "top10spnew":
+            $thongKe->top10SpNew();
+            break;
+        case "top10spbanchaynhat":
+            $thongKe->top10spBanChayNhat();
+            break;
+            
     }
 } else {
     $danhMuc->index();
