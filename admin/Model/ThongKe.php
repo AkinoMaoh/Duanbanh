@@ -11,9 +11,18 @@ class ThongKe {
         return pdo_query($sql);
     }
    public function getAllBanChay() {
-    $sql = "select sanpham.id, sanpham.name, sanpham.price, sanpham.img, sanpham.mota, COUNT(*) AS tongban from hoadon
-            join sanpham on hoadon.idsp = sanpham.id group by sanpham.id, sanpham.name, sanpham.price 
-            order by tongban desc limit 10;";
+    $sql ="SELECT 
+    sanpham.id,
+    sanpham.name,
+    sanpham.price,
+    sanpham.img,
+    sanpham.mota,
+    SUM(chitiethoadon.soluong) AS tong_mua
+FROM chitiethoadon
+JOIN sanpham ON chitiethoadon.id_sanpham = sanpham.id
+GROUP BY sanpham.id, sanpham.name, sanpham.price, sanpham.img
+ORDER BY tong_mua DESC
+LIMIT 10;";
     return pdo_query($sql);
 }
 

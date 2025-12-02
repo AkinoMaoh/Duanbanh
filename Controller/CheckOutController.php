@@ -47,6 +47,25 @@ class CheckOutController {
         }
         include_once("views/checkout.php");
     }
+    public function add1(){
+        if (isset($_POST['ten']) && $_POST['ten'] != "" && isset($_SESSION['cart'])) {
+            $ten = $_POST['ten'];
+            
+            $diaChi = $_POST['diachi'];
+            $sdt = $_POST['dienthoai'];
+            $pttt = isset($_POST['chuyenkhoan']) ? 1 : 0;
+            $tongTien = 0;
+            foreach($_SESSION['cart'] as $item){
+                $tongTien += $item['soLuong'] * $item['price'];
+            }
+            $hoaDonId = $this->cart->insertHoadon($ten, $diaChi, $sdt, $tongTien,  $pttt);
+            
+            foreach($_SESSION['cart'] as $item){
+                $this->cart->insertCTHoadon($hoaDonId, $item['idsp'], $item['soLuong'], $item['price']);
+        }
+        header("Location:index.php?action=showcheckout");
+    }
+}
 }
 
 ?>
