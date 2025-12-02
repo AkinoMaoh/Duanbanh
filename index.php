@@ -27,6 +27,9 @@ if(isset($_GET['action']) && $_GET['action'] != "") {
         case "showcheckout":
             $checkOut->index();   
             break;
+        case "checkout":
+            $checkOut->add1();   
+            break;
     }
 } else {
     $home->home();   
