@@ -20,5 +20,8 @@ class HomeController {
     public function aboutUs() {
         include_once("views/aboutUs.php");
 }
+    public function contact() {
+        include_once("views/contact.php");
+}
 }
 ?>

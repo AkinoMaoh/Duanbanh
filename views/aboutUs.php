@@ -1,4 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+</head>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px 0;
+    }
 
+    .container {
+        background: white;
+        border-radius: 15px;
+        margin: 25px auto;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        text-align: center;
+
+    }
+
+    h1 {
+        font-weight: 700;
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 30px !important;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    h2, h4, h5 {
+        color: #333;
+        line-height: 1.8;
+        margin: 20px 0;
+    }
+    .card-img-top {
+        display: block;
+        margin: 0 auto;
+        margin-top: 15px;
+    }
+    .card {
+        border: none;
+        border-radius: 12px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        text-align: center;
+        
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(210, 105, 30, 0.3);
+    }
+
+    .card-title {
+        font-weight: 600;
+        color: #d2691e;
+        margin-top: 15px;
+    }
+
+    .card-link {
+        color: #d2691e;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+
+    .card-link:hover {
+        color: #a0522d;
+        text-decoration: underline;
+    }
+
+    .row {
+        margin-top: 30px;
+    }
+</style>
+<body>
     <?php
   
         include_once("layouts/header.php");
@@ -9,7 +90,7 @@
     <h2>Chào mừng bạn đến với dự án Sweet Bakery Project - nơi chúng tôi mang đến những chiếc bánh chất lượng, thơm ngon và tràn đầy tâm huyết.</h2>
     <h4>Dự án của chúng tôi được xây dựng với mục tiêu tạo ra một nền tảng giúp khách hàng dễ dàng tìm kiếm, lựa chọn và đặt những mẫu bánh phù hợp cho mọi dịp như sinh nhật, lễ kỷ niệm, sự kiện, hoặc đơn giản chỉ là thưởng thức hằng ngày.</h4>
     <h5>Dự án của chúng tôi được xây dựng với mục tiêu tạo ra một nền tảng giúp khách hàng dễ dàng tìm kiếm, lựa chọn và đặt những mẫu bánh phù hợp cho mọi dịp như sinh nhật, lễ kỷ niệm, sự kiện, hoặc đơn giản chỉ là thưởng thức hằng ngày.</h5>
-    <h2 class="mt-4">Thành viên nhóm</h2>
+    <h2 class="mt-4" style="color: #870f15ff;">Thành viên nhóm</h2>
     <div class="row">
         <?php
         $team = [
@@ -38,7 +119,7 @@
                 'name' => 'Phí Quốc Cường',
                 'role' => 'Front-end Developer',
                 'bio'  => 'Thiết kế giao diện và trải nghiệm người dùng.',
-                'img'  => 'ac.jpg',
+                'img'  => 'views/ac.jpg',
                 'email'=> 'phiquoccuong@example.com'
             ],
             [
