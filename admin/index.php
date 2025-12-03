@@ -3,15 +3,20 @@ include_once("Controller/DanhMucController.php");
 include_once("Controller/SanPhamController.php");
 include_once("Controller/HoaDonController.php");
 include_once("Controller/ThongKeController.php");
+include_once("Controller/LoginController.php");
 
 $danhMuc = new DanhMucController();
 $sanPham = new SanPhamController();
 $hoaDon = new HoaDonController();
 $thongKe = new ThongKeController();
+$Login = new LoginController();
 if(isset($_GET['action']) && $_GET['action'] != "") {
 $action = $_GET['action'];
     switch($action) {
         //danhmuc
+        case "login":
+            $danhMuc->index();
+            break;
         case "listdanhmuc":
             $danhMuc->index();
             break;
@@ -59,6 +64,9 @@ $action = $_GET['action'];
             break;
         case "chitiethoadon":
             $hoaDon->invoiceDetails();
+            break;
+        case "update_status":
+            $hoaDon->update_status();
             break;
         case "listthongke":
             $thongKe->index();
