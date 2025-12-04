@@ -91,9 +91,9 @@ include_once("views/layouts/header.php");
                     </tbody>
 
                     <tfoot>
-                        <tr>
+                        <tr class="btn btn-danger">
                             <td colspan="5" class="text-end fw-bold fs-5">TỔNG TIỀN THANH TOÁN:</td>
-                            <td class="fw-bold fs-5 text-danger"><?= number_format($hoaDon['tongtien']) ?> đ</td>
+                            <td class="fw-bold fs-5 text-whire"><?= number_format($hoaDon['tongtien']) ?> đ</td>
                         </tr>
                     </tfoot>
                 </table>
