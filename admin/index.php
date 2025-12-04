@@ -3,13 +3,11 @@ include_once("Controller/DanhMucController.php");
 include_once("Controller/SanPhamController.php");
 include_once("Controller/HoaDonController.php");
 include_once("Controller/ThongKeController.php");
-include_once("Controller/LoginController.php");
 
 $danhMuc = new DanhMucController();
 $sanPham = new SanPhamController();
 $hoaDon = new HoaDonController();
 $thongKe = new ThongKeController();
-$Login = new LoginController();
 if(isset($_GET['action']) && $_GET['action'] != "") {
 $action = $_GET['action'];
     switch($action) {
@@ -77,7 +75,24 @@ $action = $_GET['action'];
         case "top10spbanchaynhat":
             $thongKe->top10spBanChayNhat();
             break;
-            
+        case "listtaikhoan":
+            $taiKhoan->index();         
+            break;                          
+        case "createtaikhoan":
+            $taiKhoan->create();     
+            break;
+        case "storetaikhoan":
+            $taiKhoan->store();
+            break;
+        case "edittaikhoan":
+            $taiKhoan->edit();
+            break;
+        case "updatetaikhoan":
+            $taiKhoan->update();
+            break;
+        case "deletetaikhoan":
+            $taiKhoan->delete();
+            break;
     }
 } else {
     $danhMuc->index();

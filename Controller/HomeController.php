@@ -23,5 +23,15 @@ class HomeController {
     public function contact() {
         include_once("views/contact.php");
 }
+public function sanpham() {
+    $id = isset($_GET['id']) ? $_GET['id'] : 0;
+    $product1 = $this->homeModel->getOneSp($id);
+    include_once("views/sanpham.php");  
+}
+public function shop() {
+    
+    $products = $this->homeModel->getAll();
+    include_once("views/shop.php");  
+}
 }
 ?>

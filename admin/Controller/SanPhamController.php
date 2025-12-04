@@ -1,19 +1,15 @@
 <?php
-
 use function PHPSTORM_META\map;
-
 include_once("Model/SanPham.php");
 class SanPhamController
 {
     private $sanPham;
     private $danhMuc;
-
     public function __construct()
     {
         $this->sanPham = new SanPham();
         $this->danhMuc = new DanhMuc();
     }
-
     // Phương thức list
     public function index()
     {
@@ -23,13 +19,11 @@ class SanPhamController
         }
         include_once("./views/sanpham/list.php");
     }
-
     public function create()
     {
         $allDanhMuc = $this->danhMuc->getAll();
         include_once("./views/sanpham/create.php");
     }
-
     public function store() {
         if(isset($_POST['ten'])) {
             $ten = $_POST['ten'];
@@ -47,7 +41,6 @@ class SanPhamController
             header("Location:index.php?action=listsanpham"); // Điều hướng trở lại trang index
         }
     }
-
     public function edit() {
         if(isset($_GET['id'])) {
             $allDanhMuc = $this->danhMuc->getAll();
@@ -56,7 +49,6 @@ class SanPhamController
             include_once("./views/sanpham/edit.php");
         }
     }
-
     public function update() {
         if(isset($_POST['ten'])) {
             $id = $_POST['id'];
@@ -77,7 +69,6 @@ class SanPhamController
             header("Location:index.php?action=listsanpham"); // Điều hướng trở lại trang index
         }
     }
-
     public function delete() {
         if(isset($_GET['id'])) {
             $id = $_GET['id'];
@@ -85,7 +76,6 @@ class SanPhamController
             header("Location:index.php?action=listsanpham");
         }
     }
-
     public function restore() {
         if(isset($_GET['id'])) {
             $id = $_GET['id'];

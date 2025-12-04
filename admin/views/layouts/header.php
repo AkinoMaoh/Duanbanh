@@ -71,7 +71,13 @@
                                 <span>Thống kê</span>
                             </a>
                         </li>
-
+                        <li
+                            class="sidebar-item <?= str_contains($_SERVER['REQUEST_URI'], "taikhoan") ? 'active' : '' ?>">
+                            <a href="index.php?action=listtaikhoan" class='sidebar-link'>
+                                <i class="bi bi-file-earmark-spreadsheet-fill"></i>
+                                <span>Tài khoản</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>

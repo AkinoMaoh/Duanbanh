@@ -47,6 +47,42 @@ class CheckOutController {
         }
         include_once("views/checkout.php");
     }
+    // public function sanpham(){
+    //     if ( isset($_SESSION['cart'])){
+    //         $tongTien = 0;
+    //         foreach($_SESSION['cart'] as $key => $item){
+    //             $sanPhamDetail = $this->cart->getOneProductById($item['idsp']);
+    //             $_SESSION['cart'][$key]['name'] = $sanPhamDetail['name'];
+    //             $_SESSION['cart'][$key]['price'] = $sanPhamDetail['price'];
+    //             $_SESSION['cart'][$key]['img'] = $sanPhamDetail['img'];
+    //             $_SESSION['cart'][$key]['mota'] = $sanPhamDetail['mota'];
+    //             $tongTien += $_SESSION['cart'][$key]['soLuong'] * $sanPhamDetail['price'];
+    //         }
+    //     }else{
+    //         $_SESSION['cart'] = [];
+    //     }
+    //     include_once("views/sanpham.php");
+    // }
+    public function add1(){
+        if (isset($_POST['ten']) && $_POST['ten'] != "" && isset($_SESSION['cart'])) {
+            $ten = $_POST['ten'];
+            
+            $diaChi = $_POST['diachi'];
+            $sdt = $_POST['dienthoai'];
+            $pttt = isset($_POST['chuyenkhoan']) ? 1 : 0;
+            $tongTien = 0;
+            foreach($_SESSION['cart'] as $item){
+                $tongTien += $item['soLuong'] * $item['price'];
+            }
+            $hoaDonId = $this->cart->insertHoadon($ten, $diaChi, $sdt, $tongTien,  $pttt);
+            
+            foreach($_SESSION['cart'] as $item){
+                $this->cart->insertCTHoadon($hoaDonId, $item['idsp'], $item['soLuong'], $item['price']);
+        }
+       
+    }
+     header("Location:index.php?action=showcheckout");
+}
 }
 
 ?>

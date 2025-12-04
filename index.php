@@ -2,9 +2,13 @@
 include_once("Controller/HomeController.php");
 include_once("Controller/CartController.php");
 include_once("Controller/CheckOutController.php");
+include_once("Controller/Top10Controller.php");
+
 $home = new HomeController();
 $cart = new CartController();
 $checkOut = new CheckOutController();
+$top10 = new Top10Controller();
+
 session_start();
 if(isset($_GET['action']) && $_GET['action'] != "") {
     $action = $_GET['action'];
@@ -26,6 +30,18 @@ if(isset($_GET['action']) && $_GET['action'] != "") {
             break;
         case "showcheckout":
             $checkOut->index();   
+            break;
+        case "checkout":
+            $checkOut->add1();   
+            break;
+        case "top10new":
+            $top10->top10New();   
+            break;
+        case "sanpham":
+            $home->sanpham();   
+            break;
+        case "shop":
+            $home->shop();   
             break;
     }
 } else {
