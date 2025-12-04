@@ -48,13 +48,13 @@ include_once("views/layouts/header.php");
                         <td>
                              <form action="?action=update_status" method="POST" class="d-flex gap-2" style="max-width: 300px;">
                                 <input type="hidden" name="id" value="<?= $hoaDon['id'] ?>">
-                                    <select name="trangthai" id="statusSelect" data-current="<?= $hoaDon['trangthai'] ?>" class="form-select form-select-sm">
-                                        <option value="0" <?= $hoaDon['trangthai'] == 0 ? 'selected' : '' ?>>Đơn hàng mới</option>
-                                        <option value="1" <?= $hoaDon['trangthai'] == 1 ? 'selected' : '' ?>>Đang xử lý</option>
-                                        <option value="2" <?= $hoaDon['trangthai'] == 2 ? 'selected' : '' ?>>Đang giao hàng</option>
-                                        <option value="3" <?= $hoaDon['trangthai'] == 3 ? 'selected' : '' ?>>Đã giao hàng</option>
-                                        <option value="4" <?= $hoaDon['trangthai'] == 4 ? 'selected' : '' ?>>Đã hủy</option>
-                                    </select>
+                                   <select name="trangthai" id="select_trangthai" class="form-select form-select-sm">
+                                    <option value="0" <?= $hoaDon['trangthai'] == 0 ? 'selected' : '' ?>>Đơn hàng mới</option>
+                                    <option value="1" <?= $hoaDon['trangthai'] == 1 ? 'selected' : '' ?>>Đang xử lý</option>
+                                    <option value="2" <?= $hoaDon['trangthai'] == 2 ? 'selected' : '' ?>>Đang giao hàng</option>
+                                    <option value="3" <?= $hoaDon['trangthai'] == 3 ? 'selected' : '' ?>>Đã giao hàng</option>
+                                    <option value="4" <?= $hoaDon['trangthai'] == 4 ? 'selected' : '' ?>>Đã hủy</option>
+                                </select>
                                 <button type="submit" class="btn btn-primary btn-sm">Lưu</button>
                             </form>
                         </td>
@@ -107,29 +107,17 @@ include_once("views/layouts/header.php");
 include_once("views/layouts/footer.php");
 ?>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-     
-        var select = document.getElementById('statusSelect');
-        var currentStatus = parseInt(select.getAttribute('data-current'));
-        var options = select.options;
-
-        for (var i = 0; i < options.length; i++) {
-            var optionValue = parseInt(options[i].value);
-            if (optionValue < currentStatus) {
-                options[i].disabled = true; 
-                options[i].style.color = "#ccc"; 
-            }
+    // 1. Lấy giá trị trạng thái đang có (từ PHP đổ sang)
+    var trangThaiHienTai = <?= $hoaDon['trangthai'] ?>;
+    
+    // 2. Lấy thẻ select
+    var menu = document.getElementById('select_trangthai');
+    
+    // 3. Chạy qua từng dòng, cái nào nhỏ hơn hiện tại thì khóa lại
+    for (var i = 0; i < menu.options.length; i++) {
+        if (parseInt(menu.options[i].value) < trangThaiHienTai) {
+            menu.options[i].disabled = true; // Khóa dòng này
+            menu.options[i].style.color = "#d1d1d1"; // (Tuỳ chọn) Làm mờ màu chữ cho dễ nhìn
         }
-
-        if (currentStatus == 3 || currentStatus == 4) {
-            select.disabled = true;
-        }
-        select.addEventListener('change', function() {
-            var newStatus = parseInt(this.value);
-            if (newStatus < currentStatus) {
-                alert("Không thể quay lại trạng thái cũ!");
-                this.value = currentStatus; 
-            }
-        });
-    });
+    }
 </script>
