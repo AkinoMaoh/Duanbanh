@@ -12,6 +12,11 @@ class DanhMucController
     // Phương thức list
     public function index()
     {
+        
+        include_once("./views/login.php");
+    }
+    public function list()
+    {
         $allDanhMuc = $this->danhMuc->getAll();
         include_once("./views/danhmuc/list.php");
     }

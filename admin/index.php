@@ -16,7 +16,7 @@ $action = $_GET['action'];
             $danhMuc->index();
             break;
         case "listdanhmuc":
-            $danhMuc->index();
+            $danhMuc->list();
             break;
         case "createdanhmuc":
             $danhMuc->create();

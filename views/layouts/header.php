@@ -126,7 +126,7 @@
                   </ul>
                 </div>
                 <div class="header__top__right__auth">
-                  <a href="#"><i class="fa fa-user"></i> Đăng nhập</a>
+                  <a href="http://localhost/duanbanh/admin/"><i class="fa fa-user"></i> Đăng nhập</a>
                 </div>
               </div>
             </div>
@@ -137,7 +137,7 @@
         <div class="row">
           <div class="col-lg-3">
             <div class="header__logo">
-              <a href="./index.html"><img src="views/img/logo.jpg" alt="" /></a>
+              <a href="http://localhost/duanbanh/index.php?action=home"><img src="views/img/logo.jpg" alt="" /></a>
             </div>
           </div>
           <div class="col-lg-6">
