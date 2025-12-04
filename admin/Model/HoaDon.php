@@ -1,36 +1,39 @@
 <?php 
-include_once("pdo.php");
+require_once("pdo.php");
 
 class HoaDon {
     public function getAll() {
-        $sql = "select * from hoadon";
+        $sql = "SELECT * FROM hoadon ORDER BY id DESC";
         return pdo_query($sql);
     }
 
-    public function insert($ten) {
-        $sql = "insert into hoadon (name) values (?)";
-        pdo_execute($sql, $ten);
-    }
-
     public function getOne($id) {
-        $sql = "select * from hoadon where id = ?";
+        $sql = "SELECT * FROM hoadon WHERE id = ?";
         return pdo_query_one($sql, $id);
     }
 
-    public function update($id, $ten) {
-        $sql = "update danhmuc set `name` = ? where id = ?";
-        pdo_execute($sql, $ten, $id);
+    public function updateStatus($id, $trangthai) {
+        $sql = "UPDATE hoadon SET trangthai = ? WHERE id = ?";
+        pdo_execute($sql, $trangthai, $id);
     }
 
-    
     public function delete($id) {
-        $sql = "update danhmuc set deleted = 1 where id = ?";
+        $sql = "UPDATE hoadon SET deleted = 1 WHERE id = ?";
         pdo_execute($sql, $id);
     }    
+
     public function restore($id) {
-        $sql = "update danhmuc set deleted = 0 where id = ?";
+        $sql = "UPDATE hoadon SET deleted = 0 WHERE id = ?";
         pdo_execute($sql, $id);
     }
-}
 
+    public function getChiTiet($id_hoadon) {
+        $sql = "SELECT ct.*, s.name as ten_sp, s.img as anh_sp 
+                FROM chitiethoadon ct 
+                JOIN sanpham s ON ct.id_sanpham = s.id 
+                WHERE ct.id_hoadon = ?";
+        
+        return pdo_query($sql, $id_hoadon);
+    }
+}
 ?>

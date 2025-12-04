@@ -27,7 +27,7 @@ include_once("views/layouts/header.php");
                             <th>Tên khách hàng</th>
                             <th>Địa chỉ</th>
                             <th>Sđt</th>
-                            <th>Trạng thái</th>
+                            <Th>Trạng thái</Th>
                             <th>Chi tiết hóa đơn</th>
                         </tr>
                     </thead>
@@ -38,14 +38,18 @@ include_once("views/layouts/header.php");
                                 <td><?= $item['tenkhachhang'] ?></td>
                                 <td><?= $item['diachi'] ?></td>
                                 <td><?= $item['sdt'] ?></td>
-                            
-                                <td>                              
+                                <td>
                                     <?php if ($item['trangthai'] == 0) { ?>
-                                        <a class="btn btn-warning">Chưa thanh toán</a>
+                                        <span class="btn btn-warning">Đơn hàng mới</span>
+                                    <?php } elseif ($item['trangthai'] == 1) { ?>
+                                        <span class="btn btn-primary">Đang xử lý</span> <?php } 
+                                        elseif ($item['trangthai'] == 2) { ?>
+                                        <span class="btn btn-info">Đang giao hàng</span> <?php } 
+                                        elseif ($item['trangthai'] == 3) { ?>
+                                        <span class="btn btn-success">Đã giao hàng</span>
                                     <?php } else { ?>
-                                        <a class="btn btn-success">Đã Thanh toán</a>
-                                    <?php } ?>
-                                </td>
+                                        <span class="btn btn-danger">Đã hủy</span> <?php } ?>
+                                </td>                   
                                 <td>
                                     <a href="index.php?action=chitiethoadon&id=<?= $item['id'] ?>"
                                         class="btn btn-secondary">Chi tiết</a>                                   
