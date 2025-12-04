@@ -22,13 +22,7 @@ class HoaDonController
         include_once("./views/hoadon/create.php");
     }
 
-    // public function store() {
-    //     if(isset($_POST['ten'])) {
-    //         $ten = $_POST['ten'];
-    //         $this->danhMuc->insert($ten); // Gọi function insert ở model.
-    //         header("Location:index.php"); // Điều hướng trở lại trang index
-    //     }
-    // }
+ 
 
     public function invoiceDetails() {
         if(isset($_GET['id'])) {
@@ -38,14 +32,6 @@ class HoaDonController
         }
     }
 
-    // public function update() {
-    //     if(isset($_POST['id'])) {
-    //         $id = $_POST['id'];
-    //         $ten = $_POST['ten'];
-    //         $this->danhMuc->update($id, $ten);
-    //         header("Location:index.php");
-    //     }
-    // }
 
     public function delete() {
         if(isset($_GET['id'])) {

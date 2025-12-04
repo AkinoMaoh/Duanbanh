@@ -14,5 +14,9 @@ class Cart {
         $sql = "insert into chitiethoadon(id_hoadon, id_sanpham, soluong, gia) values(?,?,?,?)";
        return pdo_execute($sql, $hoaDonId, $sanPhamId, $soLuong, $gia);
     }
+    // public function getOneProductById($id) {
+    //     $sql = "select * from sanpham where deleted = 0 and id = ?";
+    //     return pdo_query_one($sql, $id);
+    // }
 }
 ?>

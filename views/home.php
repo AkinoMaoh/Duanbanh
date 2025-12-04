@@ -94,7 +94,7 @@
             
                 <ul class="featured__item__pic__hover">
                   <li>
-                    <a href="#"><i class="fa fa-heart"></i></a>
+                    <a href="index.php?action=sanpham&&id=<?= $item['id'] ?>"><i class="fa fa-heart"></i></a>
                   </li>
                   <li>
                     <a href="#"><i class="fa fa-retweet"></i></a>
@@ -151,7 +151,7 @@
                     </div>
                     <div class="latest-product__item__text">
                       <h6><?php echo $item['name'];?></h6>
-                      <span><?php echo $item['price'];?></span>
+                      <span><?php echo $item['price'];?> VNĐ</span>
                     </div>
                   </a>
                 </div>
