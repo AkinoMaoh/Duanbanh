@@ -63,5 +63,14 @@ class HoaDonController
             header("Location: ?action=listhoadon");
         }
     }
+    public function update_status() {
+        if (isset($_POST['id']) && isset($_POST['trangthai'])) {
+            $id = $_POST['id'];
+            $trangthai = $_POST['trangthai']; 
+            $this->hoaDonModel->updateStatus($id, $trangthai);            
+            header("Location: ?action=chitiethoadon&id=" . $id);
+            exit();
+        }
+    }
 }
 ?>
