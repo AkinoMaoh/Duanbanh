@@ -144,11 +144,11 @@
             <nav class="header__menu">
               <ul>
                 <li class="active"><a href="index.php?action=home">Trang chủ</a></li>
-                <li><a href="./shop-grid.html">Shop</a></li>
+                <li><a href="index.php?action=shop">Shop</a></li>
                 <li>
                   <a href="#">Pages</a>
                   <ul class="header__menu__dropdown">
-                    <li><a href="./shop-details.html">Top 10 sản phẩm nổi bật</a></li>
+                    <li><a href="index.php?action=top10new">Top 10 sản phẩm mới nhất</a></li>
                     <li><a href="index.php?action=cart">Giỏ hàng</a></li>
                     <li><a href="index.php?action=showcheckout">Thanh toán</a></li>
                     
@@ -163,11 +163,11 @@
             <div class="header__cart">
               <ul>
                 <li>
-                  <a href="#"><i class="fa fa-heart"></i> <span>1</span></a>
+                  <a href="#"><i class="fa fa-heart"></i></a>
                 </li>
                 <li>
-                  <a href="#"
-                    ><i class="fa fa-shopping-bag"></i> <span>3</span></a
+                  <a href="index.php?action=cart"
+                    ><i class="fa fa-shopping-bag"></i></a
                   >
                 </li>
               </ul>

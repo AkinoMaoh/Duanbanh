@@ -14,5 +14,9 @@ class Home {
         $sql = "select * from danhmuc where deleted = 0";
         return pdo_query($sql);
     }
+     public function getOneSp($id) {
+        $sql = "select * from sanpham where id = ?";
+        return pdo_query($sql, $id);
+    }
 }
 ?>
