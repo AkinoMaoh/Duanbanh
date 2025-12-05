@@ -28,10 +28,16 @@ public function sanpham() {
     $product1 = $this->homeModel->getOneSp($id);
     include_once("views/sanpham.php");  
 }
-public function shop() {
-    
+public function shop() { 
+     $productsDanhMuc = $this->homeModel->getAllDanhMuc();
     $products = $this->homeModel->getAll();
     include_once("views/shop.php");  
+}
+public function danhMuc() {
+    $iddm = isset($_GET['iddm']) ? $_GET['iddm'] : 0;
+    $productsDanhMuc = $this->homeModel->getAllDanhMuc();
+    $products = $this->homeModel->getAllSpDanhMuc($iddm);
+    include_once("views/shop.php");
 }
 }
 ?>

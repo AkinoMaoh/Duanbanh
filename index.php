@@ -43,6 +43,9 @@ if(isset($_GET['action']) && $_GET['action'] != "") {
         case "shop":
             $home->shop();   
             break;
+        case "danhmuc":
+            $home->danhmuc();   
+            break;
     }
 } else {
     $home->home();   

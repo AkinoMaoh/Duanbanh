@@ -12,7 +12,7 @@
               </div>
               <ul>
                 <?php foreach($productsDanhMuc as $item){ ?>
-                <li><a href="#"><?= $item['name']; ?></a></li>
+                <li><a href="index.php?action=danhmuc&iddm=<?= $item['id'] ?>"><?= $item['name']; ?></a></li>
                 <?php } ?>
               </ul>
             </div>
@@ -61,7 +61,7 @@
                 class="categories__item set-bg"
                 data-setbg="admin/<?php echo isset($item['img']) ? $item['img'] : 'default.png'; ?>"
               >
-                <h5><a href="#"><?php echo $item['name'] ?></a></h5>
+                <h5><a href="index.php?action=sanpham&&id=<?= $item['id'] ?>"><?php echo $item['name'] ?></a></h5>
               </div>
             </div>
               <?php } ?>
