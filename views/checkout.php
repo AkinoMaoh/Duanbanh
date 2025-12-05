@@ -12,7 +12,7 @@
                                 <div class="col-lg-12">
                                     <div class="checkout__input">
                                         <p>Họ tên<span>*</span></p>
-                                        <input type="text" name="ten">
+                                        <input required type="text" name="ten">
                                     </div>
                                 </div>
                                
@@ -20,7 +20,7 @@
                             
                             <div class="checkout__input">
                                 <p>Địa chỉ<span>*</span></p>
-                                <input type="text" name="diachi" placeholder="Street Address" class="checkout__input__add">
+                                <input type="text" required name="diachi" placeholder="Street Address" class="checkout__input__add">
                                 
                             </div>
                          
@@ -30,13 +30,13 @@
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>Điện thoại<span>*</span></p>
-                                        <input type="text" name="dienthoai">
+                                        <input type="text" required name="dienthoai">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>Email<span>*</span></p>
-                                        <input type="text" name="email">
+                                        <input type="text" required name="email">
                                     </div>
                                 </div>
                             </div>
