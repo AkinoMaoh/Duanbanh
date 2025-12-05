@@ -1,4 +1,13 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['username']) && (!isset($_GET['action']) || $_GET['action'] !== 'login')) {
+    header("Location: index.php?action=login");
+    exit();
+}
+
+?>
+<?php
 include_once("Controller/DanhMucController.php");
 include_once("Controller/SanPhamController.php");
 include_once("Controller/HoaDonController.php");
