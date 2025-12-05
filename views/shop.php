@@ -1,11 +1,29 @@
 <?php include_once('layouts/header.php'); ?>
-<div class="hero__item set-bg mb-5" data-setbg="views/img/hero/banner.jpg">
-              <div class="hero__text">
-                <span>FRUIT FRESH</span>
-                <h2>Vegetable <br />100% Organic</h2>
-                <p>Free Pickup and Delivery Available</p>
-                <a href="#" class="primary-btn">SHOP NOW</a>
+<section class="hero">
+      <div class="container">
+        <div class="row">
+                <div class="col-lg-3">  
+            <div class="hero__categories">
+              <div class="hero__categories__all">
+                <i class="fa fa-bars"></i>
+                <span>Danh mục sản phẩm</span>
               </div>
+              <ul>
+                <?php foreach($productsDanhMuc as $item){ ?>
+                <li><a href="index.php?action=danhmuc&iddm=<?= $item['id'] ?>"><?= $item['name']; ?></a></li>
+                <?php } ?>
+              </ul>
+            </div>
+          </div>
+           <div class="col-lg-9">
+             <div class="hero__item set-bg" data-setbg="views/img/hero/banner.jpg">
+              <div class="hero__text">
+                <span>BÁNH NGON</span>
+                <h2>NGUYÊN LIỆU <br />100% SẠCH</h2>
+                <p>Có dịch vụ giao hàng miễn phí</p>
+                <a href="#" class="primary-btn">MUA NGAY</a>
+              </div>
+            </div>
             </div>
           </div>
         </div>
@@ -24,7 +42,7 @@
                 class="categories__item set-bg"
                 data-setbg="admin/<?php echo isset($item['img']) ? $item['img'] : 'default.png'; ?>"
               >
-                <h5><a href="#"><?php echo $item['name'] ?></a></h5>
+                <h5><a href="index.php?action=sanpham&&id=<?= $item['id'] ?>"><?php echo $item['name'] ?></a></h5>
               </div>
             </div>
               <?php } ?>

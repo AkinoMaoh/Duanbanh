@@ -30,7 +30,7 @@ class DanhMucController
         if(isset($_POST['ten'])) {
             $ten = $_POST['ten'];
             $this->danhMuc->insert($ten); // Gọi function insert ở model.
-            header("Location:index.php"); // Điều hướng trở lại trang index
+            header("Location:index.php?action=listdanhmuc"); // Điều hướng trở lại trang index
         }
     }
 
@@ -47,7 +47,7 @@ class DanhMucController
             $id = $_POST['id'];
             $ten = $_POST['ten'];
             $this->danhMuc->update($id, $ten);
-            header("Location:index.php");
+             header("Location:index.php?action=listdanhmuc");
         }
     }
 
@@ -55,7 +55,7 @@ class DanhMucController
         if(isset($_GET['id'])) {
             $id = $_GET['id'];
             $this->danhMuc->delete($id);
-            header("Location:index.php");
+            header("Location:index.php?action=listdanhmuc");
         }
     }
 
@@ -63,7 +63,7 @@ class DanhMucController
         if(isset($_GET['id'])) {
             $id = $_GET['id'];
             $this->danhMuc->restore($id);
-            header("Location:index.php");
+            header("Location:index.php?action=listdanhmuc");
         }
     }
 }

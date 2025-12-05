@@ -18,5 +18,9 @@ class Home {
         $sql = "select * from sanpham where id = ?";
         return pdo_query($sql, $id);
     }
+    public function getAllSpDanhMuc($iddm) {
+        $sql = "SELECT * FROM sanpham WHERE iddm = ? AND deleted = 0";
+        return pdo_query($sql, $iddm);
+    }
 }
 ?>
