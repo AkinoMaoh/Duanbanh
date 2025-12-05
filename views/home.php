@@ -31,17 +31,17 @@
                   <i class="fa fa-phone"></i>
                 </div>
                 <div class="hero__search__phone__text">
-                  <h5>+65 11.188.888</h5>
-                  <span>support 24/7 time</span>
+                  <h5>0797949999</h5>
+                  <span>Hỗ trợ 24/7</span>
                 </div>
               </div>
             </div>
             <div class="hero__item set-bg" data-setbg="views/img/hero/banner.jpg">
               <div class="hero__text">
-                <span>FRUIT FRESH</span>
-                <h2>Vegetable <br />100% Organic</h2>
-                <p>Free Pickup and Delivery Available</p>
-                <a href="#" class="primary-btn">SHOP NOW</a>
+                <span>BÁNH NGON</span>
+                <h2>NGUYÊN LIỆU <br />100% SẠCH</h2>
+                <p>Có dịch vụ giao hàng miễn phí</p>
+                <a href="#" class="primary-btn">MUA NGAY</a>
               </div>
             </div>
           </div>
@@ -77,7 +77,7 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="section-title">
-              <h2>Featured Product</h2>
+              <h2>CÁC SẢN PHẨM CHÍNH</h2>
             </div>
            
           </div>

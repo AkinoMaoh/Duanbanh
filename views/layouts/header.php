@@ -144,7 +144,7 @@
             <nav class="header__menu">
               <ul>
                 <li class="active"><a href="index.php?action=home">Trang chủ</a></li>
-                <li><a href="./shop-grid.html">Shop</a></li>
+                <li><a href="index.php?action=shop">Shop</a></li>
                 <li>
                   <a href="#">Pages</a>
                   <ul class="header__menu__dropdown">
