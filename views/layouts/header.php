@@ -8,13 +8,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Ogani | Template</title>
 
-    <!-- Google Font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Css Styles -->
     <link rel="stylesheet" href="views/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="views/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="views/css/elegant-icons.css" type="text/css" />
@@ -26,12 +24,10 @@
   </head>
 
   <body>
-    <!-- Page Preloder -->
     <div id="preloder">
       <div class="loader"></div>
     </div>
 
-    <!-- Humberger Begin -->
     <div class="humberger__menu__overlay"></div>
     <div class="humberger__menu__wrapper">
       <div class="humberger__menu__logo">
@@ -64,19 +60,26 @@
       </div>
       <nav class="humberger__menu__nav mobile-menu">
         <ul>
-          <li class="active"><a href="./index.html">Trang chủ</a></li>
-          <li><a href="./shop-grid.html">Shop</a></li>
+          <li class="<?= (isset($_GET['action']) && $_GET['action']=='home') ? 'active' : '' ?>">
+            <a href="index.php?action=home">Trang chủ</a>
+          </li>
+          <li class="<?= (isset($_GET['action']) && $_GET['action']=='shop') ? 'active' : '' ?>">
+            <a href="index.php?action=shop">Shop</a>
+          </li>
           <li>
             <a href="#">Pages</a>
             <ul class="header__menu__dropdown">
-              <li><a href="./shop-details.html">Chi tiết cửa hàng</a></li>
-              <li><a href="./shoping-cart.html">Giỏ hàng</a></li>
-              <li><a href="./checkout.html">Kiểm tra</a></li>
-              <li><a href="./blog-details.html">Chi tiết blog</a></li>
+              <li><a href="index.php?action=top10new">Top 10 sản phẩm mới nhất</a></li>
+              <li><a href="index.php?action=cart">Giỏ hàng</a></li>
+              <li><a href="index.php?action=showcheckout">Thanh toán</a></li>
             </ul>
           </li>
-          <li><a href="./blog.html">Blog</a></li>
-          <li><a href="./contact.html">Liên hệ</a></li>
+          <li class="<?= (isset($_GET['action']) && $_GET['action']=='aboutUs') ? 'active' : '' ?>">
+            <a href="index.php?action=aboutUs">About us</a>
+          </li>
+          <li class="<?= (isset($_GET['action']) && $_GET['action']=='contact') ? 'active' : '' ?>">
+            <a href="index.php?action=contact">Liên hệ</a>
+          </li>
         </ul>
       </nav>
       <div id="mobile-menu-wrap"></div>
@@ -93,9 +96,7 @@
         </ul>
       </div>
     </div>
-    <!-- Humberger End -->
 
-    <!-- Header Section Begin -->
     <header class="header">
       <div class="header__top">
         <div class="container">
@@ -133,6 +134,7 @@
           </div>
         </div>
       </div>
+
       <div class="container">
         <div class="row">
           <div class="col-lg-3">
@@ -143,19 +145,26 @@
           <div class="col-lg-6">
             <nav class="header__menu">
               <ul>
-                <li class="active"><a href="index.php?action=home">Trang chủ</a></li>
-                <li><a href="index.php?action=shop">Shop</a></li>
-                <li>
+                <li class="<?= (isset($_GET['action']) && $_GET['action']=='home') ? 'active' : '' ?>">
+                  <a href="index.php?action=home">Trang chủ</a>
+                </li>
+                <li class="<?= (isset($_GET['action']) && $_GET['action']=='shop') ? 'active' : '' ?>">
+                  <a href="index.php?action=shop">Shop</a>
+                </li>
+                <li class="<?= in_array($_GET['action'] ?? '', ['top10new','cart','showcheckout']) ? 'active' : '' ?>">
                   <a href="#">Pages</a>
                   <ul class="header__menu__dropdown">
-                    <li><a href="index.php?action=top10new">Top 10 sản phẩm mới nhất</a></li>
-                    <li><a href="index.php?action=cart">Giỏ hàng</a></li>
-                    <li><a href="index.php?action=showcheckout">Thanh toán</a></li>
-                    
+                      <li><a href="index.php?action=top10new">Top 10 sản phẩm mới nhất</a></li>
+                      <li><a href="index.php?action=cart">Giỏ hàng</a></li>
+                      <li><a href="index.php?action=showcheckout">Thanh toán</a></li>
                   </ul>
+              </li>
+                <li class="<?= (isset($_GET['action']) && $_GET['action']=='aboutUs') ? 'active' : '' ?>">
+                  <a href="index.php?action=aboutUs">About us</a>
                 </li>
-                <li><a href="index.php?action=aboutUs">About us</a></li>
-                <li><a href="index.php?action=contact">Liên hệ</a></li>
+                <li class="<?= (isset($_GET['action']) && $_GET['action']=='contact') ? 'active' : '' ?>">
+                  <a href="index.php?action=contact">Liên hệ</a>
+                </li>
               </ul>
             </nav>
           </div>
@@ -166,12 +175,9 @@
                   <a href="#"><i class="fa fa-heart"></i></a>
                 </li>
                 <li>
-                  <a href="index.php?action=cart"
-                    ><i class="fa fa-shopping-bag"></i></a
-                  >
+                  <a href="index.php?action=cart"><i class="fa fa-shopping-bag"></i></a>
                 </li>
               </ul>
-
             </div>
           </div>
         </div>
@@ -180,4 +186,3 @@
         </div>
       </div>
     </header>
-    <!-- Header Section End -->
