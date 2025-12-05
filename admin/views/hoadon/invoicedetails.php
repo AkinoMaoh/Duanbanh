@@ -81,7 +81,7 @@ include_once("views/layouts/header.php");
                                 <tr>
                                     <td><?= $i + 1 ?></td>
                                     <td><?= $item['ten_sp'] ?></td>
-                                    <td><img src="uploads/<?= $item['anh_sp'] ?>" width="50" alt="img" style="object-fit: cover; border-radius: 5px;"></td>
+                                    <td><img src="./<?= $item['anh_sp'] ?>" width="50" alt="img" style="object-fit: cover; border-radius: 5px;"></td>
                                     <td><?= number_format($item['gia']) ?> đ</td>
                                     <td><?= $item['soluong'] ?></td>
                                     <td class="fw-bold"><?= number_format($item['gia'] * $item['soluong']) ?> đ</td>
