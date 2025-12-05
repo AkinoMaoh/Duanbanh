@@ -1,13 +1,12 @@
 
 <?php
-session_start();
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
  
     $user = $_POST['username'];
     $pass = $_POST['password'];
-
-    // Giả lập tài khoản đúng
+    
     if ($user === "ChuShop" && $pass === "Matkhau123") {
         $_SESSION['username'] = $user;
         header("Location: index.php?action=listdanhmuc");
@@ -74,3 +73,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </body>
 
 </html>
+<?php if (!empty($error)) { ?>
+    <div class="alert alert-danger mt-2">
+        <?= $error ?>
+    </div>
+<?php } ?>
