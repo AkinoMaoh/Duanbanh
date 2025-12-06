@@ -3,6 +3,7 @@
     <section class="breadcrumb-section set-bg" data-setbg="views/img/unnamed.jpg">
         <div class="container">
             <div class="row">
+                
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
                         <h2>Organi Shop</h2>
@@ -20,61 +21,33 @@
     <!-- Product Section Begin -->
     <section class="product spad">
         <div class="container">
+           
             <div class="row">
                 <div class="col-lg-3 col-md-5">
-                    <div class="sidebar">
-                       
-                       
-                      
-                        <div class="sidebar__item">
-                            <h4>Popular Size</h4>
-                            <div class="sidebar__item__size">
-                                <label for="large">
-                                    Large
-                                    <input type="radio" id="large">
-                                </label>
-                            </div>
-                            <div class="sidebar__item__size">
-                                <label for="medium">
-                                    Medium
-                                    <input type="radio" id="medium">
-                                </label>
-                            </div>
-                            <div class="sidebar__item__size">
-                                <label for="small">
-                                    Small
-                                    <input type="radio" id="small">
-                                </label>
-                            </div>
-                            <div class="sidebar__item__size">
-                                <label for="tiny">
-                                    Tiny
-                                    <input type="radio" id="tiny">
-                                </label>
-                            </div>
-                        </div>
-                        <div class="sidebar__item">
-                            <div class="latest-product__text">
-                               
-                                <div class="latest-product__slider owl-carousel">
-                                    
-                                    <div class="latest-prdouct__slider__item">
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                  
+                    <div class="hero__categories">
+                        <div class="hero__categories__all">
+                            <i class="fa fa-bars"></i>
+                            <span>Danh mục sản phẩm</span>
+                         </div>
+                        <ul>
+                             <?php foreach($productsDanhMuc as $item){ ?>
+                            <li><a href="index.php?action=danhmuc&iddm=<?= $item['id'] ?>"><?= $item['name']; ?></a></li>
+                            <?php } ?>
+                        </ul>
                     </div>
                 </div>
+                
+            
                 <div class="col-lg-9 col-md-7">
                     <div class="product__discount">
-    <div class="section-title product__discount__title">
-        <h2>Top 10 sản phẩm mới nhất</h2>
-    </div>
+                    <div class="section-title product__discount__title">
+                         <h2>Top 10 sản phẩm mới nhất</h2>
+                    </div>
 
-    <div class="product__discount__slider owl-carousel">
-        <?php foreach($top10New as $item){ ?>
-            <div class="product__discount__item">
+                <div class="product__discount__slider owl-carousel">
+                <?php foreach($top10New as $item){ ?>
+                <div class="product__discount__item">
                 <div class="product__discount__item__pic set-bg"
                     data-setbg="admin/<?php echo isset($item['img']) ? $item['img'] : 'default.png'; ?>">
                     <ul class="product__item__pic__hover">
@@ -88,9 +61,9 @@
                     <div class="product__item__price"><?= $item['price']; ?></div>
                 </div>
             </div>
-        <?php } ?>
-    </div>
-</div>
+            <?php } ?>
+            </div>
+            </div>
                 </div>
             </div>
         </div>
