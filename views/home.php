@@ -20,10 +20,10 @@
           <div class="col-lg-9">
             <div class="hero__search">
               <div class="hero__search__form">
-                <form action="#">
-                  
-                  <input type="text" placeholder="Nhập sản phẩm cần tìm" />
-                  <button type="submit" class="site-btn">Tìm kiếm</button>
+                <form action="index.php" method="get">
+                    <input type="hidden" name="action" value="search">
+                    <input type="text" name="keyword" placeholder="Nhập sản phẩm cần tìm" />
+                    <button type="submit" class="site-btn">Tìm kiếm</button>
                 </form>
               </div>
               <div class="hero__search__phone">

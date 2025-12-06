@@ -3,11 +3,13 @@ include_once("Controller/HomeController.php");
 include_once("Controller/CartController.php");
 include_once("Controller/CheckOutController.php");
 include_once("Controller/Top10Controller.php");
+include_once("Controller/SearchController.php");
 
 $home = new HomeController();
 $cart = new CartController();
 $checkOut = new CheckOutController();
 $top10 = new Top10Controller();
+$searchProduct = new SearchController();
 
 session_start();
 if(isset($_GET['action']) && $_GET['action'] != "") {
@@ -45,6 +47,9 @@ if(isset($_GET['action']) && $_GET['action'] != "") {
             break;
         case "danhmuc":
             $home->danhmuc();   
+            break;
+        case "search":
+            $searchProduct->search();   
             break;
     }
 } else {
