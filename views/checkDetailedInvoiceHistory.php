@@ -24,7 +24,21 @@
                     <tr><th>Khách hàng</th><td><?= $hoaDon['tenkhachhang'] ?> - <?= $hoaDon['sdt'] ?></td></tr>
                     <tr><th>Địa chỉ</th><td><?= $hoaDon['diachi'] ?></td></tr>
                     <tr><th>Ngày đặt</th><td><?= $hoaDon['ngaygiodat'] ?></td></tr>
-                    <tr><th>Trạng thái</th><td><?= $hoaDon['trangthai'] ?></td></tr>
+                    <tr>
+                        <th>Trạng thái</th>
+                        <td>
+                            <?php 
+                                $trangThai = [
+                                    0 => 'Đơn hàng mới',
+                                    1 => 'Đang xử lý',
+                                    2 => 'Đang giao hàng',
+                                    3 => 'Đã giao hàng',
+                                    4 => 'Đã hủy'
+                                ];                               
+                                echo $trangThai[$hoaDon['trangthai']] ?? 'Chưa xác định';
+                            ?>
+                        </td>
+                    </tr>
                 </table>
 
                 <h5>Danh sách sản phẩm</h5>
