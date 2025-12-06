@@ -12,11 +12,13 @@ include_once("Controller/DanhMucController.php");
 include_once("Controller/SanPhamController.php");
 include_once("Controller/HoaDonController.php");
 include_once("Controller/ThongKeController.php");
+include_once("Controller/TaiKhoanController.php");
 
 $danhMuc = new DanhMucController();
 $sanPham = new SanPhamController();
 $hoaDon = new HoaDonController();
 $thongKe = new ThongKeController();
+$taiKhoan = new TaiKhoanController();
 if(isset($_GET['action']) && $_GET['action'] != "") {
 $action = $_GET['action'];
     switch($action) {
