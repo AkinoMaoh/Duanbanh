@@ -4,12 +4,14 @@ include_once("Controller/CartController.php");
 include_once("Controller/CheckOutController.php");
 include_once("Controller/Top10Controller.php");
 include_once("Controller/SearchController.php");
+include_once("Controller/HistoryCheckoutController.php");
 
 $home = new HomeController();
 $cart = new CartController();
 $checkOut = new CheckOutController();
 $top10 = new Top10Controller();
 $searchProduct = new SearchController();
+$HistoryCheckout = new HistoryCheckoutController();
 
 session_start();
 if(isset($_GET['action']) && $_GET['action'] != "") {
@@ -51,6 +53,14 @@ if(isset($_GET['action']) && $_GET['action'] != "") {
         case "search":
             $searchProduct->search();   
             break;
+        case "HistoryCheckout":
+            $HistoryCheckout->search();
+            break;
+
+        case "HistoryCheckoutDetail":
+            $HistoryCheckout->detail();
+            break;
+
     }
 } else {
     $home->home();   
