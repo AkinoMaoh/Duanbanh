@@ -6,7 +6,7 @@
     <meta name="keywords" content="Ogani, unica, creative, html" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Ogani | Template</title>
+    <title>Cửa hàng bánh</title>
 
     <link
       href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap"
@@ -169,7 +169,7 @@
             </nav>
           </div>
           <div class="col-lg-3">
-            <div class="header__cart">
+            <div class="header__cart header__menu">
               <ul>
                 <li>
                   <a href="#"><i class="fa fa-heart"></i></a>
@@ -177,6 +177,17 @@
                 <li>
                   <a href="index.php?action=cart"><i class="fa fa-shopping-bag"></i></a>
                 </li>
+                <li class="history-menu">
+                    <a href="#"><i class="fa fa-history"></i></a>
+                    <ul class="header__menu__dropdown" style="width: 250px; padding: 10px;">
+                        <form action="index.php" method="get">
+                            <input type="hidden" name="action" value="HistoryCheckout">
+                            <input type="text" name="phoneNumber" placeholder="Nhập số điện thoại" class="form-control">
+                            <button type="submit" class="site-btn" style="margin-top: 5px; width: 100%;">Tra cứu</button>
+                        </form>
+                    </ul>
+                </li>
+
               </ul>
             </div>
           </div>
