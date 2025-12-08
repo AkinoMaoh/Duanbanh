@@ -6,13 +6,7 @@
     <title>About Us</title>
 </head>
 <style>
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
-        min-height: 100vh;
-        margin: 0;
-        padding: 20px 0;
-    }
+   
 
     .container {
         background: white;
@@ -87,9 +81,9 @@
 ?>
 <div class="container">
     <h1 class="mb-3" style="color: #d2691e;">About Us</h1>
-    <h2>Chào mừng bạn đến với dự án Sweet Bakery Project - nơi chúng tôi mang đến những chiếc bánh chất lượng, thơm ngon và tràn đầy tâm huyết.</h2>
+    <h4>Chào mừng bạn đến với dự án Sweet Bakery Project - nơi chúng tôi mang đến những chiếc bánh chất lượng, thơm ngon và tràn đầy tâm huyết.</h4>
     <h4>Dự án của chúng tôi được xây dựng với mục tiêu tạo ra một nền tảng giúp khách hàng dễ dàng tìm kiếm, lựa chọn và đặt những mẫu bánh phù hợp cho mọi dịp như sinh nhật, lễ kỷ niệm, sự kiện, hoặc đơn giản chỉ là thưởng thức hằng ngày.</h4>
-    <h5>Dự án của chúng tôi được xây dựng với mục tiêu tạo ra một nền tảng giúp khách hàng dễ dàng tìm kiếm, lựa chọn và đặt những mẫu bánh phù hợp cho mọi dịp như sinh nhật, lễ kỷ niệm, sự kiện, hoặc đơn giản chỉ là thưởng thức hằng ngày.</h5>
+    <h4>Dự án của chúng tôi được xây dựng với mục tiêu tạo ra một nền tảng giúp khách hàng dễ dàng tìm kiếm, lựa chọn và đặt những mẫu bánh phù hợp cho mọi dịp như sinh nhật, lễ kỷ niệm, sự kiện, hoặc đơn giản chỉ là thưởng thức hằng ngày.</h4>
     <h2 class="mt-4" style="color: #870f15ff;">Thành viên nhóm</h2>
     <div class="row">
         <?php
