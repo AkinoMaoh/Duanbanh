@@ -33,8 +33,9 @@ class CheckOutController {
         header("Location:index.php?action=cart");
     }
     public function index(){
+        $tongTien = 0;
         if ( isset($_SESSION['cart'])){
-            $tongTien = 0;
+            
             foreach($_SESSION['cart'] as $key => $item){
                 $sanPhamDetail = $this->cart->getAllProductById($item['idsp']);
                 $_SESSION['cart'][$key]['name'] = $sanPhamDetail['name'];
@@ -63,11 +64,13 @@ class CheckOutController {
             
             foreach($_SESSION['cart'] as $item){
                 $this->cart->insertCTHoadon($hoaDonId, $item['idsp'], $item['soLuong'], $item['price']);
-        }
+                unset($_SESSION['cart']);
+            }
        
     }
      header("Location:index.php?action=showcheckout");
 }
+
 }
 
 ?>

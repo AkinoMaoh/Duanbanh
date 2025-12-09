@@ -12,6 +12,7 @@ class HomeController {
     }
     public function home() {
         $products = $this->homeModel->getAll();
+         $productsAll = $this->homeModel->getAllShop();
         $productsNew = $this->homeModel->getAllNew();
         $productsDanhMuc = $this->homeModel->getAllDanhMuc();
         
@@ -30,13 +31,15 @@ public function sanpham() {
 }
 public function shop() { 
      $productsDanhMuc = $this->homeModel->getAllDanhMuc();
-    $products = $this->homeModel->getAll();
+       $productsNew = $this->homeModel->getAllNew();
+    $productsAll = $this->homeModel->getAllShop();
     include_once("views/shop.php");  
 }
 public function danhMuc() {
     $iddm = isset($_GET['iddm']) ? $_GET['iddm'] : 0;
     $productsDanhMuc = $this->homeModel->getAllDanhMuc();
     $products = $this->homeModel->getAllSpDanhMuc($iddm);
+     $productsNew = $this->homeModel->getAllNew();
     include_once("views/shop.php");
 }
 }

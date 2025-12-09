@@ -9,12 +9,12 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th class="shoping__product">Ảnh</th>
-                                    <th>Tên sản phẩm</th>
-                                    <th>Giá</th>
-                                    <th>Số lượng</th>
-                                    <th>Thành tiền</th>
-                                    <th>Hành động</th>
+                                    <th class="shoping__product col-3">Ảnh</th>
+                                    <th class="col-2">Tên sản phẩm</th>
+                                    <th class="col-2">Giá</th>
+                                    <th class="col-2">Số lượng</th>
+                                    <th class="col-2">Thành tiền</th>
+                                    <th class="col-1">Hành động</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -26,20 +26,28 @@
                                     </td>
                                     <td> <h5><?= $item['name'] ?></h5></td>
                                     <td class="shoping__cart__price">
-                                      <?php echo $item['price']; ?>
+                                      <span><?= number_format($item['price']); ?> VNĐ</span>
                                     </td>
-                                    <td class="shoping__cart__quantity">
+                                 <td class="shoping__cart__quantity">
                                         <div class="quantity">
                                             <div class="pro-qty">
-                                                <input type="text" value="<?= $item['soLuong']; ?>">
+                                           
+                                           <input  type="text" value="<?= $item['soLuong']; ?>" readonly>
+                                           
                                             </div>
                                         </div>
-                                    </td>
+                                        </td>
                                     <td class="shoping__cart__total">
-                                        <?= number_format($item['price'] * $item['soLuong']) ?>
+                                       <span><?= number_format($item['price'] * $item['soLuong']) ?> VNĐ</span> 
                                     </td>
+                                    
                                     <td class="shoping__cart__item__close">
-                                        <span class="icon_close"></span>
+                                        <a href="index.php?action=deletecart&idsp=<?= $item['idsp']; ?>" 
+                                        onclick="return confirm('Bạn có muốn xoá không?')"
+                                       class="xoaSP"
+                                        >
+                                            Xoá
+                                        </a>
                                     </td>
                                 </tr>
                               <?php } ?>
@@ -70,7 +78,7 @@
                     <div class="shoping__checkout">
                         <h5>Giỏ hàng</h5>
                         <ul>
-                            <li>Tổng tiền <span><?= number_format($tongTien) ?></span></li>
+                            <li>Tổng tiền <span><?= number_format($tongTien) ?> VNĐ</span></li>
                         </ul>
                         <a href="index.php?action=showcheckout" class="primary-btn">Thanh toán</a>
                     </div>

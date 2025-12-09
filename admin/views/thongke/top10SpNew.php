@@ -21,7 +21,7 @@ include_once("views/layouts/header.php");
         <div class="card">
             <div class="card-body">
                 <a href="?action=listthongke" class="btn btn-primary"> Quay lại </a>
-                <a href="?action=top10spbanchaynhat" class="btn btn-primary"> Top 10 sản phẩm bán chạy nhất </a>
+                <a href="?action=thongke10spbanchaynhat" class="btn btn-primary"> Top 10 sản phẩm bán chạy nhất </a>
                 <table class="table table-striped" id="table1">
                     <thead>
                         <tr>

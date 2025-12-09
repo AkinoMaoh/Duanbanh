@@ -21,12 +21,11 @@ include_once("views/layouts/header.php");
         <div class="card">
             <div class="card-body">
                 <a href="?action=listthongke" class="btn btn-primary"> Quay lại </a>
-                <a href="?action=top10spnew" class="btn btn-primary"> Top 10 sản phẩm mới nhất </a>
+                <a href="?action=thongke10spnew" class="btn btn-primary"> Top 10 sản phẩm mới nhất </a>
                 <table class="table table-striped" id="table1">
                     <thead>
                         <tr>
                             <th class="col-1">Id</th>
-                            <!-- <th class="col-1">Danh mục</th> -->
                             <th class="col-2">Tên sản phẩm</th>
                             <th class="col-1">Giá sp</th>
                             <th class="col-1">Ảnh</th>
@@ -39,7 +38,7 @@ include_once("views/layouts/header.php");
                         <?php foreach ($productsBanChay as $item) { ?>
                             <tr>
                                 <td><?= $item['id'] ?></td>
-                                <!-- <td><?= $item['tendanhmuc'] ?></td> -->
+                           
                                 <td><?= $item['name'] ?></td>
                                 <td><?= $item['price'] ?> VND</td>
                                 <td><img width="100px" src="./<?= $item['img'] ?>" alt=""></td>

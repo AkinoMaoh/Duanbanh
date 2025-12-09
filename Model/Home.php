@@ -3,11 +3,15 @@ include_once("pdo.php");
 
 class Home {
     public function getAll() {
-        $sql = "select * from sanpham where deleted = 0";
+        $sql = "select * from sanpham where deleted = 0 limit 8";
+        return pdo_query($sql);
+    }
+    public function getAllShop() {
+        $sql = "select * from sanpham where deleted = 0 ";
         return pdo_query($sql);
     }
     public function getAllNew() {
-        $sql = "select * from sanpham where deleted = 0 order by id desc limit 8";
+        $sql = "select * from sanpham where deleted = 0 order by id desc limit 10";
         return pdo_query($sql);
     }
   public function getAllDanhMuc() {
