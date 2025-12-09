@@ -31,15 +31,13 @@
     <div class="humberger__menu__overlay"></div>
     <div class="humberger__menu__wrapper">
       <div class="humberger__menu__logo">
-        <a href="#"><img src="views/img/logo.jpg" alt="" /></a>
+        <a href="http://localhost/duanbanh/index.php?action=home"><img src="views/img/logo.jpg" alt="" /></a>
       </div>
       <div class="humberger__menu__cart">
         <ul>
+
           <li>
-            <a href="#"><i class="fa fa-heart"></i> <span>1</span></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a>
+            <a href="index.php?action=cart"><i class="fa fa-shopping-bag"></i></a>
           </li>
         </ul>
         <div class="header__cart__price"><span></span></div>
@@ -47,7 +45,7 @@
       <div class="humberger__menu__widget">
         
         <div class="header__top__right__auth">
-          <a href="#"><i class="fa fa-user"></i> Đăng nhập</a>
+          <a href="http://localhost/duanbanh/admin/"><i class="fa fa-user"></i> Đăng nhập</a>
         </div>
       </div>
       <nav class="humberger__menu__nav mobile-menu">
@@ -155,9 +153,7 @@
           <div class="col-lg-3">
             <div class="header__cart header__menu">
               <ul>
-                <li>
-                  <a href="#"><i class="fa fa-heart"></i></a>
-                </li>
+              
                 <li>
                   <a href="index.php?action=cart"><i class="fa fa-shopping-bag"></i></a>
                 </li>

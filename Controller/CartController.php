@@ -30,8 +30,9 @@ class CartController {
         header("Location:index.php?action=cart");
     }
     public function cart(){
+         $tongTien = 0;
         if ( isset($_SESSION['cart'])){
-            $tongTien = 0;
+           
             foreach($_SESSION['cart'] as $key => $item){
                 $sanPhamDetail = $this->cart->getAllProductById($item['idsp']);
                 $_SESSION['cart'][$key]['name'] = $sanPhamDetail['name'];
@@ -44,6 +45,26 @@ class CartController {
         }
         include_once("views/cart.php");
     }
+  public function delete() {
+    if (isset($_GET['idsp'])) {
+        $id = $_GET['idsp'];
+
+        // Tìm phần tử có idsp trùng nhau
+        foreach ($_SESSION['cart'] as $key => $item) {
+            if ($item['idsp'] == $id) {
+                unset($_SESSION['cart'][$key]);
+                break;
+            }
+        }
+
+        // Sắp xếp lại key cho đều 0,1,2,3...
+        $_SESSION['cart'] = array_values($_SESSION['cart']);
+
+        header("Location: index.php?action=cart");
+        exit();
+    }
+}
+
 }
 
 ?>

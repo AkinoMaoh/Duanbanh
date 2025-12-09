@@ -80,10 +80,16 @@ $action = $_GET['action'];
         case "listthongke":
             $thongKe->index();
             break;
-        case "top10spnew":
+        case "hienTaiKhoan":
+            $thongKe->hienTaiKhoan();
+            break;
+        // case "soluong":
+        //     $thongKe->soLuong();
+        //     break;
+        case "thongke10spnew":
             $thongKe->top10SpNew();
             break;
-        case "top10spbanchaynhat":
+        case "thongke10spbanchaynhat":
             $thongKe->top10spBanChayNhat();
             break;
         case "listtaikhoan":

@@ -47,10 +47,20 @@
                               
                                 <h4>Mặt hàng của bạn</h4>
                                   <!-- <form action="index.php?action=thanhtoan" method="POST"> -->
-                                     <div class="checkout__order__products">Sản phẩm <span>Số lượng</span><span>Giá</span><span>Tổng</span></div>
+                                     <div class="checkout__order__products">
+                                        <span class="col-3 text-center">Sản phẩm </span>
+                                         <span class="col-3 text-center">Số lượng</span>
+                                         <span class="col-2 text-center">Giá</span>
+                                         <span class="col-2 text-center">Tổng</span>
+                                        </div>
                                 <?php foreach($_SESSION['cart'] as $item) { ?>
                                 <ul>
-                                    <li><?= $item['name']; ?><span><?= $item['soLuong']; ?></span><span><?php echo $item['price']; ?></span><span><?= number_format($item['price'] * $item['soLuong']) ?></span></li>
+                                    <li>
+                                        <span class="col-3 text-center"><?= $item['name']; ?></span>
+                                        <span class="col-3 text-center"><?= $item['soLuong']; ?></span>
+                                        <span class="col-3 text-center"><?php echo $item['price']; ?></span>
+                                        <span class="col-2 text-center"><?= number_format($item['price'] * $item['soLuong']) ?></span>
+                                    </li>
                                    
                                 </ul>
                                 <?php } ?>
@@ -65,7 +75,14 @@
                                     </label>
                                 </div>
                                
-                                <button type="submit" class="site-btn">Thanh toán</button>
+                                <button type="submit" class="site-btn">
+                                    <?php if ($tongTien == 0) {
+                                       echo 'Bạn không có sản phẩm nào để thanh toán';
+                                    }else{
+                                        echo 'Thanh toán';
+                                    }
+                                     ?>
+                                </button>
                             </div>
                               
                                   <!-- </form>  -->

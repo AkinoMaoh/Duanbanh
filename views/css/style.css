@@ -1946,8 +1946,19 @@ ol {
   width: 110px;
 }
 
-.shoping__cart__table table tbody tr td.shoping__cart__item__close {
-  text-align: right;
+.shoping__cart__table table tbody tr td.shoping__cart__item__close a.xoaSP {
+  text-align: center;
+  color: red;
+  font-weight: bold;
+}
+.shoping__cart__table
+  table
+  tbody
+  tr
+  td.shoping__cart__item__close
+  a.xoaSP:hover {
+  color: rgb(199, 48, 48);
+  font-weight: bold;
 }
 
 .shoping__cart__table table tbody tr td.shoping__cart__item__close span {

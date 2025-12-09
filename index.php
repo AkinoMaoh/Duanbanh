@@ -32,6 +32,9 @@ if(isset($_GET['action']) && $_GET['action'] != "") {
         case "cart":
             $cart->cart();   
             break;
+        case "deletecart":
+            $cart->delete();   
+            break;
         case "showcheckout":
             $checkOut->index();   
             break;
@@ -60,6 +63,7 @@ if(isset($_GET['action']) && $_GET['action'] != "") {
         case "HistoryCheckoutDetail":
             $HistoryCheckout->detail();
             break;
+
 
     }
 } else {

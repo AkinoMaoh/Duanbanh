@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="views/assets/css/bootstrap.css">
 
     <link rel="stylesheet" href="views/assets/vendors/simple-datatables/style.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="views/assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
     <link rel="stylesheet" href="views/assets/vendors/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="views/assets/css/app.css">
