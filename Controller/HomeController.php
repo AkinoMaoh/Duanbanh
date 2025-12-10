@@ -30,6 +30,8 @@ public function sanpham() {
     include_once("views/sanpham.php");  
 }
 public function shop() { 
+    
+      $products = $this->homeModel->getAll();
      $productsDanhMuc = $this->homeModel->getAllDanhMuc();
        $productsNew = $this->homeModel->getAllNew();
     $productsAll = $this->homeModel->getAllShop();
