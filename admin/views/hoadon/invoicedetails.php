@@ -44,6 +44,19 @@ include_once("views/layouts/header.php");
                         <td><?= $hoaDon['ngaygiodat'] ?></td>
                     </tr>
                     <tr>
+                        <th>Phương thức thanh toán</th>
+                        
+                            <?php 
+                                if ($hoaDon['pttt'] == 1) { ?>
+                                    <td>Chuyển khoản</td>
+                            <?php } else { ?>
+                                    <td>Thanh toán khi nhận hàng (COD)</td>
+                            <?php } ?>
+                          
+
+                    
+                    </tr>
+                    <tr>
                         <th>Trạng thái</th>
                         <td>
                              <form action="?action=update_status" method="POST" class="d-flex gap-2" style="max-width: 300px;">
