@@ -55,7 +55,7 @@
       <div class="container">
         <div class="row">
           <div class="categories__slider owl-carousel">
-            <?php foreach($products as $item){?>
+            <?php foreach($productsAll as $item){?>
             <div class="col-lg-3">
               <div
                 class="categories__item set-bg"
@@ -84,7 +84,7 @@
         </div>
         <div class="row featured__filter">
           
-     <?php foreach($products as $item) { ?>
+     <?php foreach($productsAll as $item) { ?>
           <div class="col-lg-3 col-md-4 col-sm-6 mix fastfood vegetables">
             <div class="featured__item">
               <div
