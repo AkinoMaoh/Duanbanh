@@ -51,10 +51,7 @@ include_once("views/layouts/header.php");
                                     <td>Chuyển khoản</td>
                             <?php } else { ?>
                                     <td>Thanh toán khi nhận hàng (COD)</td>
-                            <?php } ?>
-                          
-
-                    
+                            <?php } ?>            
                     </tr>
                     <tr>
                         <th>Trạng thái</th>

@@ -85,7 +85,7 @@
             </div>
 
             <div class="card" style="width: 18rem;" >
-                <img src="./views/team2.jpg" class="card-img-top" alt="...">
+                <img src="./views/anhThanhVien/avt29_11_2025.png" class="card-img-top" alt="...">
                 <div class="card-body" style="text-align: center;">
                     <h5 class="card-title">Đặng Thành Trung</h5>
                     <p class="card-text">Lập trình viên Back-end</p>
