@@ -21,8 +21,8 @@ include_once("views/layouts/header.php");
                                                 </div>
                                             </div>
                                             <div class="col-md-8">
-                                                <h6 class="text-muted font-semibold">Thống kê theo tuần</h6>
-                                                <h6 class="font-extrabold mb-0">112.000</h6>
+                                                <h6 class="text-muted font-semibold">Tổng doanh thu</h6>
+                                                <h6 class="font-extrabold mb-0"><?= number_format($tongDoanhThu['tongDoanhThu']) ?></h6>
                                             </div>
                                         </div>
                                     </div>
@@ -38,13 +38,14 @@ include_once("views/layouts/header.php");
                                                 </div>
                                             </div>
                                             <div class="col-md-8">
-                                                <h6 class="text-muted font-semibold">Thống kê theo tháng</h6>
-                                                <h6 class="font-extrabold mb-0">183.000</h6>
+                                                <h6 class="text-muted font-semibold">Tổng hoá đơn</h6>
+                                                <h6 class="font-extrabold mb-0"><?php echo $tongDon['tongdon']; ?></h6>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            
                             <div class="col-6 col-lg-3 col-md-6">
                             
                                 <div class="card">
@@ -56,8 +57,8 @@ include_once("views/layouts/header.php");
                                                 </div>
                                             </div>
                                             <div class="col-md-8">
-                                                <h6 class="text-muted font-semibold">Thống kê theo năm</h6>
-                                                <h6 class="font-extrabold mb-0">80.000</h6>
+                                                <h6 class="text-muted font-semibold">Tổng số sản phẩm đã bán</h6>
+                                                <h6 class="font-extrabold mb-0"><?= number_format($tongDaBan) ?></h6>
                                             </div>
                                         </div>
                                     </div>
@@ -73,8 +74,8 @@ include_once("views/layouts/header.php");
                                                 </div>
                                             </div>
                                             <div class="col-md-8">
-                                                <h6 class="text-muted font-semibold">Tổng sản phẩm đã bán</h6>
-                                                <h6 class="font-extrabold mb-0"><?= number_format($tongDaBan) ?></h6>
+                                                <h6 class="text-muted font-semibold"></h6>
+                                                <h6 class="font-extrabold mb-0"></h6>
                                             </div>
                                         </div>
                                     </div>
@@ -225,7 +226,7 @@ include_once("views/layouts/header.php");
                                 <?php foreach($hienThiTK as $item){ ?>
                                 <div class="recent-message d-flex px-4 py-3">
                                     <div class="avatar avatar-lg">
-                                        <img src="views/assets/images/faces/4.jpg">
+                                        <img src="views/assets/images/faces/1.jpg">
                                     </div>
                                     <div class="name ms-4">
                                         <h5 class="mb-1"><?= $item['user']; ?></h5>
