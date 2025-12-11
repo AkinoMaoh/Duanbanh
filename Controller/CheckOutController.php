@@ -55,7 +55,7 @@ class CheckOutController {
             
             $diaChi = $_POST['diachi'];
             $sdt = $_POST['dienthoai'];
-            $pttt = isset($_POST['chuyenkhoan']) ? 1 : 0;
+            $pttt = isset($_POST['pttt']) ? $_POST['pttt'] : 0;
             $tongTien = 0;
             foreach($_SESSION['cart'] as $item){
                 $tongTien += $item['soLuong'] * $item['price'];

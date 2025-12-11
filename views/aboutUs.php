@@ -1,154 +1,122 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-</head>
 <style>
-   
+    .team-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    flex-wrap: nowrap;
+    margin-top: 30px;
+}
 
-    .container {
-        background: white;
-        border-radius: 15px;
-        margin: 25px auto;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-        max-width: 600px;
-        text-align: center;
+.team-container .card {
+    width: 18rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-    }
+.team-container .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
 
-    h1 {
-        font-weight: 700;
-        text-align: center;
-        font-size: 2.5rem;
-        margin-bottom: 30px !important;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    }
+.team-container img {
+    height: 200px;
+    object-fit: cover;
+    
+}
 
-    h2, h4, h5 {
-        color: #333;
-        line-height: 1.8;
-        margin: 20px 0;
-    }
-    .card-img-top {
-        display: block;
-        margin: 0 auto;
-        margin-top: 15px;
-    }
-    .card {
-        border: none;
-        border-radius: 12px;
-        transition: transform 0.3s, box-shadow 0.3s;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        text-align: center;
-        
-    }
-
-    .card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(210, 105, 30, 0.3);
-    }
-
-    .card-title {
-        font-weight: 600;
-        color: #d2691e;
-        margin-top: 15px;
-    }
-
-    .card-link {
-        color: #d2691e;
-        text-decoration: none;
-        font-weight: 500;
-        transition: color 0.3s;
-    }
-
-    .card-link:hover {
-        color: #a0522d;
-        text-decoration: underline;
-    }
-
-    .row {
-        margin-top: 30px;
-    }
 </style>
-<body>
-    <?php
-  
-        include_once("layouts/header.php");
-     
-?>
-<div class="container">
-    <h1 class="mb-3" style="color: #d2691e;">About Us</h1>
-    <h4>Chào mừng bạn đến với dự án Sweet Bakery Project - nơi chúng tôi mang đến những chiếc bánh chất lượng, thơm ngon và tràn đầy tâm huyết.</h4>
-    <h4>Dự án của chúng tôi được xây dựng với mục tiêu tạo ra một nền tảng giúp khách hàng dễ dàng tìm kiếm, lựa chọn và đặt những mẫu bánh phù hợp cho mọi dịp như sinh nhật, lễ kỷ niệm, sự kiện, hoặc đơn giản chỉ là thưởng thức hằng ngày.</h4>
-    <h4>Dự án của chúng tôi được xây dựng với mục tiêu tạo ra một nền tảng giúp khách hàng dễ dàng tìm kiếm, lựa chọn và đặt những mẫu bánh phù hợp cho mọi dịp như sinh nhật, lễ kỷ niệm, sự kiện, hoặc đơn giản chỉ là thưởng thức hằng ngày.</h4>
-    <h2 class="mt-4" style="color: #870f15ff;">Thành viên nhóm</h2>
-    <div class="row">
-        <?php
-        $team = [
-            [
-                'name' => 'Dương Quốc Anh',
-                'role' => 'Quản lý dự án',
-                'bio'  => 'Chịu trách nhiệm điều phối và quản lý tiến độ.',
-                'img'  => '/assets/images/default.jpg',
-                'email'=> 'duongquocanh@gmail.com'
-            ],
-            [
-                'name' => 'Đặng Thành Trung',
-                'role' => 'Lập trình viên Back-end',
-                'email'=> 'nguyenthanhtrung@example.com',
-                'bio'  => 'Phát triển API và xử lý cơ sở dữ liệu.',
-                'img'  => 'views/img/aboutUs/trung.jpg'
-            ],
-            [
-                'name' => 'Nguyễn Văn Trung',
-                'role' => 'Front-end Developer',
-                'bio'  => 'Thiết kế giao diện và trải nghiệm người dùng.',
-                'img'  => 'views/img/aboutUs/trung.jpg',
-                'email'=> 'nguyenvantrung@example.com'
-            ],
-            [
-                'name' => 'Phí Quốc Cường',
-                'role' => 'Front-end Developer',
-                'bio'  => 'Thiết kế giao diện và trải nghiệm người dùng.',
-                'img'  => 'views/ac.jpg',
-                'email'=> 'phiquoccuong@example.com'
-            ],
-            [
-                'name' => 'Văn Mạnh',
-                'role' => 'Front-end Developer',
-                'bio'  => 'Thiết kế giao diện và trải nghiệm người dùng.',
-                'img'  => '/assets/images/van-c.jpg',
-                'email'=> 'vanmanh@example.com'
-            ],
-        ];
+<?php include_once("layouts/header.php"); ?>
 
-        foreach ($team as $member) {
-            $name  = htmlspecialchars($member['name']);
-            $role  = htmlspecialchars($member['role']);
-            $bio   = htmlspecialchars($member['bio']);
-            $img   = htmlspecialchars($member['img']);
-            $email = htmlspecialchars($member['email']);
-
-            echo "
-            <div class=\"col-md-4 mb-4\">
-                <div class=\"card h-100\">
-                    <img src=\"{$img}\" class=\"card-img-top\" alt=\"{$name}\" style=\"object-fit:cover;height:220px;\">
-                    <div class=\"card-body\">
-                        <h5 class=\"card-title\">{$name}</h5>
-                        <p class=\"card-subtitle text-muted\">{$role}</p>
-                        <p class=\"card-text mt-2\">{$bio}</p>
-                        <a href=\"mailto:{$email}\" class=\"card-link\">{$email}</a>
-                    </div>
+<!-- About Section Begin -->
+<section class="about spad" style="margin-top: -80px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="about__text">
+                    <h1>Giới thiệu về cửa hàng bánh</h1>
+                    <p>
+                        Chúng tôi tự hào mang đến những chiếc bánh kem tươi ngon, 
+                        được làm từ nguyên liệu chất lượng cao, đảm bảo an toàn và hương vị tuyệt hảo.
+                        Với hơn 5 năm kinh nghiệm, cửa hàng đã phục vụ hàng nghìn khách hàng và đồng hành trong những khoảnh khắc đặc biệt.
+                    </p>
+                    <p>
+                        Từ bánh sinh nhật, bánh cưới đến bánh sự kiện – tất cả đều được trang trí thủ công tỉ mỉ, 
+                        mang phong cách riêng biệt.
+                    </p>
                 </div>
-            </div>";
-        }
-        ?>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="about__pic">
+                    <img src="./views/aboutUs.jpg" alt="" style="width: 100%; border-radius:10px;">
+                </div>
+            </div>
+
+        </div>
     </div>
+</section>
+<!-- About Section End -->
 
 
-<?php
-    include_once("layouts/footer.php");
-?>
+<!-- Team Section Begin -->
+<section class="team spad" style="margin-top: -150px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="section-title">
+                    <h2>Đội ngũ của chúng tôi</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row team-container">
+            <div class="card" style="width: 18rem;" >
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body" style="text-align: center;">
+                    <h5 class="card-title">Dương Quốc Anh</h5>
+                    <p class="card-text">Quản lý dự án</p>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;" >
+                <img src="./views/team2.jpg" class="card-img-top" alt="...">
+                <div class="card-body" style="text-align: center;">
+                    <h5 class="card-title">Đặng Thành Trung</h5>
+                    <p class="card-text">Lập trình viên Back-end</p>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;" >
+                <img src="./views/team3.jpg" class="card-img-top" alt="...">
+                <div class="card-body" style="text-align: center;">
+                    <h5 class="card-title">Nguyễn Văn Trung</h5>
+                    <p class="card-text">Front-end Developer</p>
+                </div>
+            </div>  
+            <div class="card" style="width: 18rem;">
+                <img src="./views/anhThanhVien/cuong.jpg" alt="" class="card-img-top" >
+                <div class="card-body" style="text-align: center;">
+                    <h5 class="card-title">Phí Quốc Cường</h5>
+                    <p class="card-text">Thiết kế giao diện người dùng</p>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;" >
+                <img src="./views/team3.jpg" class="card-img-top" alt="...">
+                <div class="card-body" style="text-align: center;">
+                    <h5 class="card-title">Văn Mạnh</h5>
+                    <p class="card-text">Front-end Developer</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+<?php include_once("layouts/footer.php"); ?>
