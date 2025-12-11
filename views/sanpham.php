@@ -7,7 +7,7 @@
                     <div class="product__details__pic">
                         <div class="product__details__pic__item">
                             <img class="product__details__pic__item--large"
-                                src="admin/image/<?php echo isset($item['img']) ? $item['img'] : 'default.png'; ?>" alt="">
+                                src="admin/<?php echo isset($item['img']) ? $item['img'] : 'default.png'; ?>" alt="">
                         </div>
                     </div>
                 </div>
