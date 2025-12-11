@@ -12,8 +12,6 @@ class HomeController {
     }
     public function home() {
         $products = $this->homeModel->getAll();
-         $productsAll = $this->homeModel->getAllShop();
-        $productsNew = $this->homeModel->getAllNew();
         $productsDanhMuc = $this->homeModel->getAllDanhMuc();
         
         include_once("views/home.php");
@@ -30,18 +28,15 @@ public function sanpham() {
     include_once("views/sanpham.php");  
 }
 public function shop() { 
-    
-      $products = $this->homeModel->getAll();
+      $products = $this->homeModel->getAllSp();
      $productsDanhMuc = $this->homeModel->getAllDanhMuc();
-       $productsNew = $this->homeModel->getAllNew();
-    $productsAll = $this->homeModel->getAllShop();
+      $productsNew = $this->homeModel->getAllNew();
     include_once("views/shop.php");  
 }
 public function danhMuc() {
     $iddm = isset($_GET['iddm']) ? $_GET['iddm'] : 0;
     $productsDanhMuc = $this->homeModel->getAllDanhMuc();
     $products = $this->homeModel->getAllSpDanhMuc($iddm);
-     $productsNew = $this->homeModel->getAllNew();
     include_once("views/shop.php");
 }
 }

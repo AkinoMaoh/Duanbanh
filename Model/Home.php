@@ -6,6 +6,10 @@ class Home {
         $sql = "select * from sanpham where deleted = 0 limit 8";
         return pdo_query($sql);
     }
+    public function getAllSp() {
+        $sql = "select * from sanpham where deleted = 0 ";
+        return pdo_query($sql);
+    }
     public function getAllShop() {
         $sql = "select * from sanpham where deleted = 0 ";
         return pdo_query($sql);
