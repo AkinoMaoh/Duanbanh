@@ -40,31 +40,28 @@
                                     <p>Họ tên<span>*</span></p>
                                     <input type="text" name="ten" id="nhap_ten" required>
                                     <small class="thong-bao-loi" id="loi_ten">Vui lòng nhập họ tên</small>
-                                </div>
+                                    </div>
                             </div>
                         </div>
 
-                        <div class="checkout__input">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="checkout__input">
                             <p>Địa chỉ<span>*</span></p>
                             <input type="text" name="diachi" id="nhap_diachi" placeholder="Street Address" class="checkout__input__add" required>
                             <small class="thong-bao-loi" id="loi_diachi">Vui lòng nhập địa chỉ</small>
                         </div>
+                            </div>
+                        </div>
 
                         <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-lg-12   ">
                                 <div class="checkout__input">
                                     <p>Điện thoại<span>*</span></p>
                                     <input type="text" name="dienthoai" id="nhap_dienthoai" required>
                                     <small class="thong-bao-loi" id="loi_dienthoai">SĐT không hợp lệ (Phải là 10 số VN)</small>
                                 </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="checkout__input">
-                                    <p>Email<span>*</span></p>
-                                    <input type="text" name="email" id="nhap_email" required>
-                                    <small class="thong-bao-loi" id="loi_email">Email phải là @gmail.com</small>
-                                </div>
-                            </div>
+                            </div>                         
                         </div>
 
                     </div>
@@ -134,18 +131,17 @@
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     
-    const oNhapTen = document.getElementById('nhap_ten');
-    const oNhapDiaChi = document.getElementById('nhap_diachi');
-    const oNhapSDT = document.getElementById('nhap_dienthoai');
-    const oNhapEmail = document.getElementById('nhap_email');
-    const nutDatHang = document.getElementById('nutDatHang');
+    let oNhapTen = document.getElementById('nhap_ten');
+    let oNhapDiaChi = document.getElementById('nhap_diachi');
+    let oNhapSDT = document.getElementById('nhap_dienthoai');
+    let nutDatHang = document.getElementById('nutDatHang');
 
-    const radioChuyenKhoan = document.getElementById("payment1");
-    const radioCOD = document.getElementById("payment0");
-    const khoiQR = document.getElementById("khung_ma_qr");
+    let radioChuyenKhoan = document.getElementById("payment1");
+    let radioCOD = document.getElementById("payment0");
+    let khoiQR = document.getElementById("khung_ma_qr");
 
-    const dinhDangSDT = /^(0)(3|5|7|8|9)[0-9]{8}$/; 
-    const dinhDangGmail = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+    let dinhDangSDT = /^(0)(3|5|7|8|9)[0-9]{8}$/; 
+    let dinhDangGmail = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
 
     function capNhatGiaoDien() {
         if (!nutDatHang) return;
@@ -189,12 +185,7 @@ document.addEventListener("DOMContentLoaded", function() {
             hienThiLoi(oNhapSDT, 'loi_dienthoai', false);
         }
 
-        if (!dinhDangGmail.test(oNhapEmail.value.trim())) {
-            hienThiLoi(oNhapEmail, 'loi_email', true);
-            hopLe = false;
-        } else {
-            hienThiLoi(oNhapEmail, 'loi_email', false);
-        }
+
 
         nutDatHang.disabled = !hopLe;
         
@@ -206,7 +197,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function hienThiLoi(doiTuongInput, idLoi, coLoi) {
-        const theLoi = document.getElementById(idLoi);
+        let theLoi = document.getElementById(idLoi);
         if (coLoi) {
             theLoi.style.display = 'block';
             doiTuongInput.classList.add('vien-do-loi');
@@ -220,7 +211,6 @@ document.addEventListener("DOMContentLoaded", function() {
         oNhapTen.addEventListener('input', kiemTraDuLieu);
         oNhapDiaChi.addEventListener('input', kiemTraDuLieu);
         oNhapSDT.addEventListener('input', kiemTraDuLieu);
-        oNhapEmail.addEventListener('input', kiemTraDuLieu);
 
         radioChuyenKhoan.addEventListener("change", capNhatGiaoDien);
         radioCOD.addEventListener("change", capNhatGiaoDien);
@@ -235,7 +225,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 alert("Bạn đã đặt hàng thành công!");
             }
             if (radioChuyenKhoan.checked) {
-                alert("Đang xác thực thanh toán...");
+                alert("Bạn đã đặt hàng thành công! Đang đợi admin xác thực thanh toán... ");
             }
         });
 
