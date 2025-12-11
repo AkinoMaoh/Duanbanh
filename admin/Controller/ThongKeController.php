@@ -19,18 +19,24 @@ class ThongKeController
     public function index()
     {
      
-         $soLuongDaBan = $this->thongKe->soLuongBan();
+        $soLuongDaBan = $this->thongKe->soLuongBan();
         $tongDaBan = isset($soLuongDaBan['soLuongDaBan']) ? $soLuongDaBan['soLuongDaBan'] : 0;
         $tongDoanhThu = $this->thongKe->doanhThu();
         $tongDon = $this->thongKe->tongDonHang();
-         $hienThiTK = $this->thongKe->getTK();
-         $productsNew = $this->thongKe->getAllNew();
-          $productsBanChay = $this->thongKe->getAllBanChay();
+        $hienThiTK = $this->thongKe->getTK();
+        $productsNew = $this->thongKe->getAllNew();
+        $productsBanChay = $this->thongKe->getAllBanChay();
           foreach($productsNew as $key => $item) {
             $productsNew[$key]['tendanhmuc'] = $this->danhMuc->getOne($item['iddm'])['name'];
         }
-       
-        
+        if (isset($_GET['date_from']) && isset($_GET['date_to'])) {
+            $dateFrom = $_GET['date_from'];
+            $dateTo = $_GET['date_to'];
+        }else{
+            $dateFrom = date('Y-m-d', strtotime('-30 days'));
+            $dateTo = date('Y-m-d');  
+        }
+           $listDoanhThu = $this->thongKe->loadSodo($dateFrom, $dateTo);
         include_once("./views/thongke/list.php");
     }
     public function top10SpNew()

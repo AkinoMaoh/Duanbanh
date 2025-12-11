@@ -42,7 +42,18 @@ public function tongDonHang() {
     $sql = "SELECT COUNT(*) AS tongdon FROM hoadon WHERE trangthai != 4";
     return pdo_query_one($sql);
 }
-
+public function loadSodo($dateFrom, $dateTo){
+    $sql = "SELECT DATE(ngaygiodat) as ngay, ";
+        $sql .= "COUNT(id) as so_luong_don, ";
+        $sql .= "SUM(tongtien) as doanh_thu ";
+        $sql .= "FROM hoadon ";
+        $sql .= "WHERE trangthai != '4' ";
+        $sql .= "AND DATE(ngaygiodat) >= '$dateFrom' ";
+        $sql .= "AND DATE(ngaygiodat) <= '$dateTo' ";
+        $sql .= "GROUP BY DATE(ngaygiodat) ";
+        $sql .= "ORDER BY DATE(ngaygiodat) ASC";
+        return pdo_query($sql);
+}
 
 }
 ?>

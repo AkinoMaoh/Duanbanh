@@ -64,23 +64,49 @@ include_once("views/layouts/header.php");
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6 col-lg-3 col-md-6">
-                                <div class="card">
-                                    <div class="card-body px-3 py-4-5">
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="stats-icon red">
-                                                    <i class="fas fa-chart-pie"></i>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <h6 class="text-muted font-semibold"></h6>
-                                                <h6 class="font-extrabold mb-0"></h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <form action="index.php?action=listthongke" method="GET" class="d-flex">
+            <input type="hidden" name="action" value="listthongke">
+
+            <input type="date" name="date_from" class="form-control me-2"
+                value="<?= $dateFrom ?>">
+
+            <input type="date" name="date_to" class="form-control me-2"
+                value="<?= $dateTo ?>">
+
+            <button class="btn btn-primary">Lọc</button>
+        </form>
+        <?php
+$ngay = [];
+$soLuongDon = [];
+$doanhThu = [];
+
+foreach ($listDoanhThu as $row) {
+    $ngay[] = $row['ngay'];
+    $soLuongDon[] = (int)$row['so_luong_don'];
+    $doanhThu[]   = (int)$row['doanh_thu'];
+}
+?>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var chart = new ApexCharts(document.querySelector("#chart-profile-visit"), {
+            chart: {
+                type: "bar",
+                height: 350
+            },
+            series: [{
+                name: "Doanh thu",
+                data: <?= json_encode($doanhThu) ?>
+            }],
+            xaxis: {
+                categories: <?= json_encode($ngay) ?>
+            }
+        });
+
+        chart.render();
+    });
+</script>
+
                         </div>
                         <div class="row">
                             <div class="col-12">
