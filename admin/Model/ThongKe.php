@@ -32,8 +32,17 @@ public function getTK(){
 }
 public function soLuongBan() {
     $sql = "SELECT SUM(soLuong) AS soLuongDaBan FROM chitiethoadon";
-    return pdo_query_one($sql);   // trả về mảng 1 dòng
+    return pdo_query_one($sql);   
 }
+public function doanhThu(){
+    $sql = "SELECT SUM(tongtien) AS tongDoanhThu FROM hoadon WHERE trangthai != 4";
+    return pdo_query_one($sql);  
+}
+public function tongDonHang() {
+    $sql = "SELECT COUNT(*) AS tongdon FROM hoadon WHERE trangthai != 4";
+    return pdo_query_one($sql);
+}
+
 
 }
 ?>
