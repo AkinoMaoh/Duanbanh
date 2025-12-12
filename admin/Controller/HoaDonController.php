@@ -22,40 +22,43 @@ class HoaDonController
     }
 
 
-    public function invoiceDetails() {
-        if(isset($_GET['id'])) {
+    public function invoiceDetails()
+    {
+        if (isset($_GET['id'])) {
             $id = $_GET['id'];
             $hoaDon = $this->hoaDonModel->getOne($id);
             $listChiTiet = $this->hoaDonModel->getChiTiet($id);
-            
+
             include_once("views/hoadon/invoicedetails.php");
         }
     }
 
 
-    public function delete() {
-        if(isset($_GET['id'])) {
+    public function delete()
+    {
+        if (isset($_GET['id'])) {
             $id = $_GET['id'];
             $this->hoaDonModel->delete($id);
             header("Location: ?action=listhoadon");
         }
     }
 
-    public function restore() {
-        if(isset($_GET['id'])) {
+    public function restore()
+    {
+        if (isset($_GET['id'])) {
             $id = $_GET['id'];
             $this->hoaDonModel->restore($id);
             header("Location: ?action=listhoadon");
         }
     }
-    public function update_status() {
+    public function update_status()
+    {
         if (isset($_POST['id']) && isset($_POST['trangthai'])) {
             $id = $_POST['id'];
-            $trangthai = $_POST['trangthai']; 
-            $this->hoaDonModel->updateStatus($id, $trangthai);            
+            $trangthai = $_POST['trangthai'];
+            $this->hoaDonModel->updateStatus($id, $trangthai);
             header("Location: ?action=chitiethoadon&id=" . $id);
             exit();
         }
     }
 }
-?>

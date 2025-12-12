@@ -24,7 +24,7 @@ include_once("views/layouts/header.php");
         <div class="card">
             <div class="card-body">
                 <a href="?action=listhoadon" class="btn btn-primary mb-3"> Quay lại </a>
-                
+
                 <h5 class="mb-3">Thông tin đơn hàng</h5>
                 <table class="table table-striped table-bordered mb-4">
                     <tr>
@@ -45,20 +45,20 @@ include_once("views/layouts/header.php");
                     </tr>
                     <tr>
                         <th>Phương thức thanh toán</th>
-                        
-                            <?php 
-                                if ($hoaDon['pttt'] == 1) { ?>
-                                    <td>Chuyển khoản</td>
-                            <?php } else { ?>
-                                    <td>Thanh toán khi nhận hàng (COD)</td>
-                            <?php } ?>            
+
+                        <?php
+                        if ($hoaDon['pttt'] == 1) { ?>
+                            <td>Chuyển khoản</td>
+                        <?php } else { ?>
+                            <td>Thanh toán khi nhận hàng (COD)</td>
+                        <?php } ?>
                     </tr>
                     <tr>
                         <th>Trạng thái</th>
                         <td>
-                             <form action="?action=update_status" method="POST" class="d-flex gap-2" style="max-width: 300px;">
+                            <form action="?action=update_status" method="POST" class="d-flex gap-2" style="max-width: 300px;">
                                 <input type="hidden" name="id" value="<?= $hoaDon['id'] ?>">
-                                   <select name="trangthai" id="select_trangthai" class="form-select form-select-sm">
+                                <select name="trangthai" id="select_trangthai" class="form-select form-select-sm">
                                     <option value="0" <?= $hoaDon['trangthai'] == 0 ? 'selected' : '' ?>>Đơn hàng mới</option>
                                     <option value="1" <?= $hoaDon['trangthai'] == 1 ? 'selected' : '' ?>>Đang xử lý</option>
                                     <option value="2" <?= $hoaDon['trangthai'] == 2 ? 'selected' : '' ?>>Đang giao hàng</option>
@@ -73,7 +73,8 @@ include_once("views/layouts/header.php");
 
                 <h5 class="mb-3">Danh sách sản phẩm</h5>
                 <table class="table table-striped">
-                    <thead> <tr>
+                    <thead>
+                        <tr>
                             <th>STT</th>
                             <th>Tên sản phẩm</th>
                             <th>Hình ảnh</th>
@@ -84,8 +85,10 @@ include_once("views/layouts/header.php");
                     </thead>
                     <tbody>
                         <?php if (empty($listChiTiet)): ?>
-                            <tr><td colspan="6" class="text-center text-muted">Chưa có sản phẩm</td></tr>
-                        
+                            <tr>
+                                <td colspan="6" class="text-center text-muted">Chưa có sản phẩm</td>
+                            </tr>
+
                         <?php else: ?>
                             <?php foreach ($listChiTiet as $i => $item): ?>
                                 <tr>
@@ -119,10 +122,10 @@ include_once("views/layouts/footer.php");
 <script>
     // 1. Lấy giá trị trạng thái đang có (từ PHP đổ sang)
     var trangThaiHienTai = <?= $hoaDon['trangthai'] ?>;
-    
+
     // 2. Lấy thẻ select
     var menu = document.getElementById('select_trangthai');
-    
+
     // 3. Chạy qua từng dòng, cái nào nhỏ hơn hiện tại thì khóa lại
     for (var i = 0; i < menu.options.length; i++) {
         if (parseInt(menu.options[i].value) < trangThaiHienTai) {

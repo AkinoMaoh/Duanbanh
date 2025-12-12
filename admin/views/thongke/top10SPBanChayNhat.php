@@ -44,8 +44,6 @@ include_once("views/layouts/header.php");
                                 <td><?= $item['price'] ?> VND</td>
                                 <td><img width="100px" src="./<?= $item['img'] ?>" alt=""></td>
                                 <td><?= $item['mota'] ?></td>
-
-
                             </tr>
                         <?php } ?>
                     </tbody>

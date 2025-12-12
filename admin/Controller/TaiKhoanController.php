@@ -1,13 +1,16 @@
 <?php
 require_once __DIR__ . '/../Model/taikhoan.php';
 
-class TaiKhoanController {
+class TaiKhoanController
+{
 
-    public function loginForm() {
+    public function loginForm()
+    {
         include_once __DIR__ . '/../views/login.php';
     }
 
-    public function login() {
+    public function login()
+    {
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -39,7 +42,8 @@ class TaiKhoanController {
         include_once __DIR__ . '/../views/login.php';
     }
 
-    public function logout() {
+    public function logout()
+    {
         session_unset();
         session_destroy();
         session_start();
@@ -47,33 +51,39 @@ class TaiKhoanController {
         exit;
     }
 
-    public function index() {
+    public function index()
+    {
         $users = taikhoan_all();
         include_once __DIR__ . '/../views/taikhoan/listtaikhoan.php';
     }
 
-    public function create() {
+    public function create()
+    {
         include_once __DIR__ . '/../views/taikhoan/createtaikhoan.php';
     }
 
-    public function store() {
+    public function store()
+    {
         taikhoan_insert($_POST['name'], $_POST['email'], $_POST['address'], $_POST['user'], $_POST['pass'], $_POST['role']);
         header("Location: index.php?action=listtaikhoan");
         exit;
     }
 
-    public function edit() {
+    public function edit()
+    {
         $user = taikhoan_get_one($_GET['id']);
         include_once __DIR__ . '/../views/taikhoan/edittaikhoan.php';
     }
 
-    public function update() {
+    public function update()
+    {
         taikhoan_update($_POST['id'], $_POST['name'], $_POST['email'], $_POST['address'], $_POST['user'], $_POST['role']);
         header("Location: index.php?action=listtaikhoan");
         exit;
     }
 
-    public function delete() {
+    public function delete()
+    {
         $id = $_GET['id'];
 
         if ($id == $_SESSION['id']) {

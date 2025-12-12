@@ -3,8 +3,6 @@ include_once("views/layouts/header.php");
 ?>
 
 <body>
-
-
     <div class="page-heading">
         <h3>Trang thống kê</h3>
     </div>
@@ -59,7 +57,7 @@ include_once("views/layouts/header.php");
                                     </div>
                                     <div class="col-md-8">
                                         <h6 class="text-muted font-semibold">Tổng số sản phẩm đã bán</h6>
-                                        <h6 class="font-extrabold mb-0"><?php echo ($tongDaBan) ?></h6>
+                                        <h6 class="font-extrabold mb-0"><?php echo ($tongDaBan['tong_soluong']) ?></h6>
 
                                     </div>
                                 </div>
