@@ -16,7 +16,7 @@ include_once("views/layouts/header.php");
                                     <label for="first-name-vertical">Danh mục</label>
                                     <select name="danhmuc" class="form-select" id="basicSelect">
                                         <?php foreach ($allDanhMuc as $item) { ?>
-                                            <option value="<?=  $item['id'] ?>"><?=  $item['name'] ?></option>
+                                            <option value="<?= $item['id'] ?>"><?= $item['name'] ?></option>
                                         <?php } ?>
                                     </select>
                                 </fieldset>

@@ -14,8 +14,8 @@ include_once("views/layouts/header.php");
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="first-name-vertical">Tên danh mục</label>
-                                    <input type="text" id="first-name-vertical" class="form-control" 
-                                    name="ten" placeholder="Điền tên danh mục vào đây">
+                                    <input type="text" id="first-name-vertical" class="form-control"
+                                        name="ten" placeholder="Điền tên danh mục vào đây">
                                 </div>
                             </div>
                             <div class="col-12 d-flex justify-content-end">

@@ -41,16 +41,16 @@ include_once("views/layouts/header.php");
                                 <td><?= $u['email'] ?></td>
                                 <td><?= $u['address'] ?></td>
                                 <td><?= $u['user'] ?></td>
-                                <td><?= $u['role']==1?'Admin':'User' ?></td>
+                                <td><?= $u['role'] == 1 ? 'Admin' : 'User' ?></td>
                                 <td>
                                     <a href="index.php?action=edittaikhoan&id=<?= $u['id'] ?>" class="btn btn-secondary btn-sm">Sửa</a>
 
                                     <?php if ($u['id'] != $_SESSION['id']): ?>
-                                        <a onclick="return confirm('Bạn có chắc muốn xóa?')" 
-                                           href="index.php?action=deletetaikhoan&id=<?= $u['id'] ?>" 
-                                           class="btn btn-danger btn-sm">Xóa</a>
+                                        <a onclick="return confirm('Bạn có chắc muốn xóa?')"
+                                            href="index.php?action=deletetaikhoan&id=<?= $u['id'] ?>"
+                                            class="btn btn-danger btn-sm">Xóa</a>
                                     <?php endif; ?>
-                                    
+
                                 </td>
                             </tr>
                         <?php endforeach; ?>

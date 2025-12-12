@@ -14,8 +14,7 @@ class ThongKeController
     // Phương thức list
     public function index()
     {
-        $soLuongDaBan = $this->thongKe->soLuongBan();
-        $tongDaBan = $soLuongDaBan['tong_soluong'] ?? 0;
+        $tongDaBan =  $this->thongKe->soLuongBan();
         $tongDoanhThu = $this->thongKe->doanhThu();
         $tongDon = $this->thongKe->tongDonHang();
         $productsNew = $this->thongKe->getAllNew();

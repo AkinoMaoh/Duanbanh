@@ -14,8 +14,8 @@ include_once("views/layouts/header.php");
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="first-name-vertical">Tên danh mục</label>
-                                    <input type="text" id="first-name-vertical" class="form-control" 
-                                    name="ten" value="<?= $danhMuc['name'] ?>">
+                                    <input type="text" id="first-name-vertical" class="form-control"
+                                        name="ten" value="<?= $danhMuc['name'] ?>">
                                 </div>
                             </div>
                             <input type="hidden" name="id" value="<?= $danhMuc['id'] ?>">

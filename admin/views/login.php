@@ -10,7 +10,7 @@ if (!isset($_SESSION)) session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Mazer Admin Dashboard</title>
+    <title>Login - Admin Dashboard</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="views/assets/css/bootstrap.css">
     <link rel="stylesheet" href="views/assets/vendors/bootstrap-icons/bootstrap-icons.css">
@@ -25,7 +25,7 @@ if (!isset($_SESSION)) session_start();
             <div class="col-lg-5 col-12">
                 <div id="auth-left">
                     <div class="auth-logo">
-                        <a href="index.php?action=listdanhmuc">
+                        <a href="http://localhost/duanbanh/index.php?action=home">
                             <img src="views/assets/images/logo.jpg" alt="Logo">
                         </a>
                     </div>
