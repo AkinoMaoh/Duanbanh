@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="views/assets/css/bootstrap.css">
 
     <link rel="stylesheet" href="views/assets/vendors/simple-datatables/style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="views/assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
     <link rel="stylesheet" href="views/assets/vendors/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="views/assets/css/app.css">
@@ -33,47 +33,40 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="sidebar-menu">
                     <ul class="menu">
                         <li class="sidebar-title">Menu</li>
 
-                        <!-- <li class="sidebar-item  ">
-                            <a href="index.php?action=home" class='sidebar-link'>
-                                <i class="bi bi-grid-fill"></i>
-                                <span>Trang chủ</span>
-                            </a>
-                        </li> -->
-
-                        <li
-                            class="sidebar-item <?= str_contains($_SERVER['REQUEST_URI'], "danhmuc") ? 'active' : '' ?>">
+                        <li class="sidebar-item <?= str_contains($_SERVER['REQUEST_URI'], "danhmuc") ? 'active' : '' ?>">
                             <a href="index.php?action=listdanhmuc" class='sidebar-link'>
                                 <i class="bi bi-file-earmark-spreadsheet-fill"></i>
                                 <span>Danh mục</span>
                             </a>
                         </li>
-                        <li
-                            class="sidebar-item <?= str_contains($_SERVER['REQUEST_URI'], "sanpham") ? 'active' : '' ?>">
+
+                        <li class="sidebar-item <?= str_contains($_SERVER['REQUEST_URI'], "sanpham") ? 'active' : '' ?>">
                             <a href="index.php?action=listsanpham" class='sidebar-link'>
                                 <i class="bi bi-file-earmark-spreadsheet-fill"></i>
                                 <span>Sản phẩm</span>
                             </a>
                         </li>
-                        <li
-                            class="sidebar-item <?= str_contains($_SERVER['REQUEST_URI'], "hoadon") ? 'active' : '' ?>">
+
+                        <li class="sidebar-item <?= str_contains($_SERVER['REQUEST_URI'], "hoadon") ? 'active' : '' ?>">
                             <a href="index.php?action=listhoadon" class='sidebar-link'>
                                 <i class="bi bi-file-earmark-spreadsheet-fill"></i>
                                 <span>Hóa đơn</span>
                             </a>
                         </li>
-                        <li
-                            class="sidebar-item <?= str_contains($_SERVER['REQUEST_URI'], "thongke") ? 'active' : '' ?>">
+
+                        <li class="sidebar-item <?= str_contains($_SERVER['REQUEST_URI'], "thongke") ? 'active' : '' ?>">
                             <a href="index.php?action=listthongke" class='sidebar-link'>
                                 <i class="bi bi-file-earmark-spreadsheet-fill"></i>
                                 <span>Thống kê</span>
                             </a>
                         </li>
-                        <li
-                            class="sidebar-item <?= str_contains($_SERVER['REQUEST_URI'], "taikhoan") ? 'active' : '' ?>">
+
+                        <li class="sidebar-item <?= str_contains($_SERVER['REQUEST_URI'], "taikhoan") ? 'active' : '' ?>">
                             <a href="index.php?action=listtaikhoan" class='sidebar-link'>
                                 <i class="bi bi-file-earmark-spreadsheet-fill"></i>
                                 <span>Tài khoản</span>
@@ -81,9 +74,17 @@
                         </li>
                     </ul>
                 </div>
+
+                <div class="sidebar-footer mt-5 p-3">
+                    <a href="index.php?action=logout" class="btn btn-danger w-100">
+                        <i class="fa-solid fa-right-from-bracket"></i> Đăng xuất
+                    </a>
+                </div>
+
                 <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
             </div>
         </div>
+
         <div id="main">
             <header class="mb-3">
                 <a href="#" class="burger-btn d-block d-xl-none">

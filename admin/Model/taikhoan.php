@@ -31,3 +31,13 @@ function taikhoan_delete($id) {
     pdo_execute($sql, $id);
 }
 
+// Kiểm tra đăng nhập
+function taikhoan_checklogin($user, $pass) {
+    $sql = "SELECT * FROM taikhoan WHERE user=? AND pass=?";
+    return pdo_query_one($sql, $user, $pass);
+}
+
+function taikhoan_get_by_user($user) {
+    $sql = "SELECT * FROM taikhoan WHERE user=?";
+    return pdo_query_one($sql, $user);
+}
