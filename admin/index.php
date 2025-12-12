@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-$allowedActionsWithoutLogin = ['login', 'loginSubmit'];
+$hanhDongKhongCanDangNhap = ['login', 'loginSubmit'];
 
-if (!isset($_SESSION['username']) && (!isset($_GET['action']) || !in_array($_GET['action'], $allowedActionsWithoutLogin))) {
+if (!isset($_SESSION['username']) && (!isset($_GET['action']) || !in_array($_GET['action'], $hanhDongKhongCanDangNhap))) {
     header("Location: index.php?action=login");
     exit();
 }
