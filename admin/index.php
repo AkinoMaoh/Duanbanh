@@ -1,14 +1,13 @@
-
 <?php
 session_start();
 
-if (!isset($_SESSION['username']) && (!isset($_GET['action']) || $_GET['action'] !== 'login')) {
+$hanhDongKhongCanDangNhap = ['login', 'loginSubmit'];
+
+if (!isset($_SESSION['username']) && (!isset($_GET['action']) || !in_array($_GET['action'], $hanhDongKhongCanDangNhap))) {
     header("Location: index.php?action=login");
     exit();
 }
 
-?>
-<?php
 include_once("Controller/DanhMucController.php");
 include_once("Controller/SanPhamController.php");
 include_once("Controller/HoaDonController.php");
@@ -20,13 +19,27 @@ $sanPham = new SanPhamController();
 $hoaDon = new HoaDonController();
 $thongKe = new ThongKeController();
 $taiKhoan = new TaiKhoanController();
+
 if(isset($_GET['action']) && $_GET['action'] != "") {
-$action = $_GET['action'];
+    $action = $_GET['action'];
+
     switch($action) {
-        //danhmuc
-        case "login":
-            $danhMuc->index();
+
+        // ----- LOGIN-----
+        case 'login':
+            $taiKhoan->loginForm();
             break;
+
+        case 'loginSubmit':
+            $taiKhoan->login();
+            break;
+
+        case 'logout':
+            $taiKhoan->logout();
+            break;
+        // --------------------------------
+
+        // Danh mục
         case "listdanhmuc":
             $danhMuc->list();
             break;
@@ -48,6 +61,8 @@ $action = $_GET['action'];
         case "restoredanhmuc":
             $danhMuc->restore();
             break;
+
+        // Sản phẩm
         case "listsanpham":
             $sanPham->index();
             break;
@@ -69,6 +84,8 @@ $action = $_GET['action'];
         case "restoresanpham":
             $sanPham->restore();
             break;
+
+        // Hóa đơn
         case "listhoadon":
             $hoaDon->index();
             break;
@@ -78,26 +95,27 @@ $action = $_GET['action'];
         case "update_status":
             $hoaDon->update_status();
             break;
+
+        // Thống kê
         case "listthongke":
             $thongKe->index();
             break;
         case "hienTaiKhoan":
             $thongKe->hienTaiKhoan();
             break;
-        // case "soluong":
-        //     $thongKe->soLuong();
-        //     break;
         case "thongke10spnew":
             $thongKe->top10SpNew();
             break;
         case "thongke10spbanchaynhat":
             $thongKe->top10spBanChayNhat();
             break;
+
+        // Tài khoản
         case "listtaikhoan":
-            $taiKhoan->index();         
-            break;                          
+            $taiKhoan->index();
+            break;
         case "createtaikhoan":
-            $taiKhoan->create();     
+            $taiKhoan->create();
             break;
         case "storetaikhoan":
             $taiKhoan->store();
@@ -112,8 +130,8 @@ $action = $_GET['action'];
             $taiKhoan->delete();
             break;
     }
+
 } else {
     $danhMuc->index();
 }
-
 ?>

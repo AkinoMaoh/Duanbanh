@@ -1,21 +1,8 @@
-
 <?php
-
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
- 
-    $user = $_POST['username'];
-    $pass = $_POST['password'];
-    
-    if ($user === "ChuShop" && $pass === "Matkhau123") {
-        $_SESSION['username'] = $user;
-        header("Location: index.php?action=listdanhmuc");
-        exit();
-    } else {
-       echo "<script>alert('Tài khoản hoặc mật khẩu không đúng!');</script>";
-    }
-}
+if (!isset($_SESSION)) session_start();
 ?>
+
+<?php if ($_SERVER['REQUEST_METHOD'] !== 'POST') $error = $error ?? null; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,14 +25,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="col-lg-5 col-12">
                 <div id="auth-left">
                     <div class="auth-logo">
-                        <a href="http://localhost/duanbanh/index.php?action=home"><img src="views/assets/images//logo.jpg" alt="Logo"  ></a>
+                        <a href="index.php?action=listdanhmuc">
+                            <img src="views/assets/images/logo.jpg" alt="Logo">
+                        </a>
                     </div>
                     <h1 class="auth-title">Log in.</h1>
-                    <p class="auth-subtitle mb-5">Đăng nhập để sửu dụng các chức năng của hệ thống</p>
+                    <p class="auth-subtitle mb-5">Đăng nhập để sử dụng các chức năng của hệ thống</p>
 
-                    <form action="" method="POST">
+                    <form action="index.php?action=loginSubmit" method="POST">
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="text" class="form-control form-control-xl" placeholder="Username" name="username">
+                            <input type="text" class="form-control form-control-xl" placeholder="Username" name="username" value="<?= htmlspecialchars($_POST['username'] ?? '') ?>">
                             <div class="form-control-icon">
                                 <i class="bi bi-person"></i>
                             </div>
@@ -56,16 +45,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <i class="bi bi-shield-lock"></i>
                             </div>
                         </div>
-                      
+
                         <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Đăng nhập</button>
                     </form>
-                  
+
+                    <?php if (!empty($error)) { ?>
+                        <div class="alert alert-danger mt-2"><?= $error ?></div>
+                    <?php } ?>
+
                 </div>
             </div>
             <div class="col-lg-7 d-none d-lg-block">
-                <div id="auth-right">
-
-                </div>
+                <div id="auth-right"></div>
             </div>
         </div>
 
@@ -73,8 +64,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </body>
 
 </html>
-<?php if (!empty($error)) { ?>
-    <div class="alert alert-danger mt-2">
-        <?= $error ?>
-    </div>
-<?php } ?>

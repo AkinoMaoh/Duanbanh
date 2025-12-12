@@ -45,7 +45,6 @@ include_once("views/layouts/header.php");
                     <div class="mb-3">
                         <label>Role</label>
                         <select name="role" class="form-control">
-                            <option value="0">User</option>
                             <option value="1">Admin</option>
                         </select>
                     </div>
