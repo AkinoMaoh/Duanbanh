@@ -26,25 +26,26 @@ include_once("views/layouts/header.php");
                     <thead>
                         <tr>
                             <th class="col-1">Id</th>
+                            <th class="col-1">Danh mục</th>
                             <th class="col-2">Tên sản phẩm</th>
                             <th class="col-1">Giá sp</th>
                             <th class="col-1">Ảnh</th>
                             <th class="col-3">Mô tả</th>
-                      
-                            
+
+
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($productsBanChay as $item) { ?>
                             <tr>
                                 <td><?= $item['id'] ?></td>
-                           
+                                <td><?= $item['tendanhmuc'] ?></td>
                                 <td><?= $item['name'] ?></td>
                                 <td><?= $item['price'] ?> VND</td>
                                 <td><img width="100px" src="./<?= $item['img'] ?>" alt=""></td>
                                 <td><?= $item['mota'] ?></td>
-                               
-                              
+
+
                             </tr>
                         <?php } ?>
                     </tbody>
