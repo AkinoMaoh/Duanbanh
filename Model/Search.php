@@ -4,8 +4,10 @@ include_once("pdo.php");
 class Search {
 
     public function searchProduct($keyword) {
-        $sql = "SELECT * FROM sanpham WHERE name LIKE ?";
+        // Chỉ tìm sản phẩm chưa bị xóa
+        $sql = "SELECT * FROM sanpham WHERE deleted = 0 AND name LIKE ?";
         return pdo_query($sql, "%".$keyword."%");
     }
 
 }
+?>

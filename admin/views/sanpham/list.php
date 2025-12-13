@@ -47,10 +47,10 @@ include_once("views/layouts/header.php");
                                         class="btn btn-secondary">Sửa</a>
                                     <?php if ($item['deleted'] == 0) { ?>
                                         <a href="index.php?action=deletesanpham&id=<?= $item['id'] ?>"
-                                           onclick="return confirm('Bạn có muốn xóa không?')" class="btn btn-danger">Xóa</a>
+                                           onclick="return confirm('Bạn có muốn ẩn sản phẩm không?')" class="btn btn-danger">Ẩn sản phẩm</a>
                                     <?php } else { ?>
                                         <a href="index.php?action=restoresanpham&id=<?= $item['id'] ?>"
-                                           onclick="return confirm('Bạn có muốn khôi phục không?')" class="btn btn-warning">Khôi phục</a>
+                                           onclick="return confirm('Bạn có muốn hiện sản phẩm không?')" class="btn btn-warning">Hiện sản phẩm</a>
                                     <?php } ?>
                                 </td>
                             </tr>
