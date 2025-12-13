@@ -6,26 +6,26 @@ class ThongKe
 
     public function getAllNew()
     {
-        $sql = "select * from sanpham where deleted = 0 order by id desc limit 10";
+        $sql = "SELECT sp.*, dm.name AS tendanhmuc
+                FROM sanpham sp
+                JOIN danhmuc dm ON sp.iddm = dm.id
+                WHERE sp.deleted = 0
+                ORDER BY sp.id DESC
+                LIMIT 10";
         return pdo_query($sql);
     }
+
     public function getAllBanChay()
     {
-        $sql = "SELECT 
-    sp.id,
-    sp.name,
-    sp.price,
-    sp.img,
-    sp.mota,
-    dm.name AS tendanhmuc,
-    SUM(cthd.soluong) AS tong_mua
-FROM chitiethoadon AS cthd
-JOIN sanpham AS sp ON cthd.id_sanpham = sp.id
-JOIN danhmuc AS dm ON sp.iddm = dm.id
-GROUP BY sp.id
-ORDER BY tong_mua DESC
-LIMIT 10;
-";
+        $sql = "SELECT sp.id, sp.name, sp.price, sp.img, sp.mota, dm.name AS tendanhmuc,
+                SUM(cthd.soluong) AS tong_mua
+                FROM chitiethoadon AS cthd
+                JOIN sanpham AS sp ON cthd.id_sanpham = sp.id
+                JOIN danhmuc AS dm ON sp.iddm = dm.id
+                GROUP BY sp.id
+                ORDER BY tong_mua DESC
+                LIMIT 10;
+                ";
         return pdo_query($sql);
     }
 

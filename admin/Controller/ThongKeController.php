@@ -19,9 +19,6 @@ class ThongKeController
         $tongDon = $this->thongKe->tongDonHang();
         $productsNew = $this->thongKe->getAllNew();
         $productsBanChay = $this->thongKe->getAllBanChay();
-        foreach ($productsNew as $key => $item) {
-            $productsNew[$key]['tendanhmuc'] = $this->danhMuc->getOne($item['iddm'])['name'];
-        }
         if (isset($_GET['date_from']) && isset($_GET['date_to'])) {
             $dateFrom = $_GET['date_from'];
             $dateTo = $_GET['date_to'];
@@ -35,9 +32,6 @@ class ThongKeController
     public function top10SpNew()
     {
         $productsNew = $this->thongKe->getAllNew();
-        foreach ($productsNew as $key => $item) {
-            $productsNew[$key]['tendanhmuc'] = $this->danhMuc->getOne($item['iddm'])['name'];
-        }
         include_once("./views/thongke/top10SpNew.php");
     }
     public function top10SpBanChayNhat()
