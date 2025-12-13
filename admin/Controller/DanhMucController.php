@@ -12,7 +12,7 @@ class DanhMucController
     // Phương thức list
     public function index()
     {
-        
+
         include_once("./views/login.php");
     }
     public function list()
@@ -26,46 +26,49 @@ class DanhMucController
         include_once("./views/danhmuc/create.php");
     }
 
-    public function store() {
-        if(isset($_POST['ten'])) {
+    public function store()
+    {
+        if (isset($_POST['ten'])) {
             $ten = $_POST['ten'];
             $this->danhMuc->insert($ten); // Gọi function insert ở model.
             header("Location:index.php?action=listdanhmuc"); // Điều hướng trở lại trang index
         }
     }
 
-    public function edit() {
-        if(isset($_GET['id'])) {
+    public function edit()
+    {
+        if (isset($_GET['id'])) {
             $id = $_GET['id'];
             $danhMuc = $this->danhMuc->getOne($id);
             include_once("./views/danhmuc/edit.php");
         }
     }
 
-    public function update() {
-        if(isset($_POST['id'])) {
+    public function update()
+    {
+        if (isset($_POST['id'])) {
             $id = $_POST['id'];
             $ten = $_POST['ten'];
             $this->danhMuc->update($id, $ten);
-             header("Location:index.php?action=listdanhmuc");
+            header("Location:index.php?action=listdanhmuc");
         }
     }
 
-    public function delete() {
-        if(isset($_GET['id'])) {
+    public function delete()
+    {
+        if (isset($_GET['id'])) {
             $id = $_GET['id'];
             $this->danhMuc->delete($id);
             header("Location:index.php?action=listdanhmuc");
         }
     }
 
-    public function restore() {
-        if(isset($_GET['id'])) {
+    public function restore()
+    {
+        if (isset($_GET['id'])) {
             $id = $_GET['id'];
             $this->danhMuc->restore($id);
             header("Location:index.php?action=listdanhmuc");
         }
     }
 }
-
-?>

@@ -42,17 +42,15 @@ include_once("views/layouts/header.php");
                                     <?php if ($item['trangthai'] == 0) { ?>
                                         <span class="btn btn-warning">Đơn hàng mới</span>
                                     <?php } elseif ($item['trangthai'] == 1) { ?>
-                                        <span class="btn btn-primary">Đang xử lý</span> <?php } 
-                                        elseif ($item['trangthai'] == 2) { ?>
-                                        <span class="btn btn-info">Đang giao hàng</span> <?php } 
-                                        elseif ($item['trangthai'] == 3) { ?>
+                                        <span class="btn btn-primary">Đang xử lý</span> <?php } elseif ($item['trangthai'] == 2) { ?>
+                                        <span class="btn btn-info">Đang giao hàng</span> <?php } elseif ($item['trangthai'] == 3) { ?>
                                         <span class="btn btn-success">Đã giao hàng</span>
                                     <?php } else { ?>
                                         <span class="btn btn-danger">Đã hủy</span> <?php } ?>
-                                </td>                   
+                                </td>
                                 <td>
                                     <a href="index.php?action=chitiethoadon&id=<?= $item['id'] ?>"
-                                        class="btn btn-secondary">Chi tiết</a>                                   
+                                        class="btn btn-secondary">Chi tiết</a>
                                 </td>
                             </tr>
                         <?php } ?>

@@ -42,8 +42,8 @@ include_once("views/layouts/header.php");
                     <div class="mb-3">
                         <label>Role</label>
                         <select name="role" class="form-control">
-                            <option value="0" <?= $user['role']==0?'selected':'' ?>>User</option>
-                            <option value="1" <?= $user['role']==1?'selected':'' ?>>Admin</option>
+                            <option value="0" <?= $user['role'] == 0 ? 'selected' : '' ?>>User</option>
+                            <option value="1" <?= $user['role'] == 1 ? 'selected' : '' ?>>Admin</option>
                         </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Cập nhật</button>

@@ -16,7 +16,7 @@ include_once("views/layouts/header.php");
                                     <label for="first-name-vertical">Danh mục</label>
                                     <select name="danhmuc" class="form-select" id="basicSelect">
                                         <?php foreach ($allDanhMuc as $item) { ?>
-                                            <option <?= $sanPham['iddm'] == $item['id'] ? "selected" : "" ?>  value="<?=  $item['id'] ?>"><?=  $item['name'] ?></option>
+                                            <option <?= $sanPham['iddm'] == $item['id'] ? "selected" : "" ?> value="<?= $item['id'] ?>"><?= $item['name'] ?></option>
                                         <?php } ?>
                                     </select>
                                 </fieldset>
@@ -24,28 +24,28 @@ include_once("views/layouts/header.php");
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="first-name-vertical">Tên sản phẩm</label>
-                                    <input  required type="text" id="first-name-vertical" class="form-control" name="ten"
-                                        placeholder="Điền tên sản phẩm vào đây" value="<?=  $sanPham['name'] ?>">
+                                    <input required type="text" id="first-name-vertical" class="form-control" name="ten"
+                                        placeholder="Điền tên sản phẩm vào đây" value="<?= $sanPham['name'] ?>">
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="first-name-vertical">Giá sản phẩm</label>
                                     <input required type="number" id="first-name-vertical" class="form-control" name="gia"
-                                        placeholder="Điền giá sản phẩm vào đây" value="<?=  $sanPham['price'] ?>">
+                                        placeholder="Điền giá sản phẩm vào đây" value="<?= $sanPham['price'] ?>">
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="first-name-vertical">Ảnh sản phẩm</label>
-                                    <input  type="file" id="first-name-vertical" class="form-control" name="anh">
+                                    <input type="file" id="first-name-vertical" class="form-control" name="anh">
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="first-name-vertical">Mô tả sản phẩm</label>
                                     <input required type="text" id="first-name-vertical" class="form-control" name="mota"
-                                        placeholder="Điền mô tả sản phẩm vào đây" value="<?=  $sanPham['mota'] ?>">
+                                        placeholder="Điền mô tả sản phẩm vào đây" value="<?= $sanPham['mota'] ?>">
                                 </div>
                             </div>
                             <input type="hidden" name="id" value="<?= $sanPham['id'] ?>">

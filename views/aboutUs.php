@@ -77,7 +77,7 @@
 
         <div class="row team-container">
             <div class="card" style="width: 18rem;" >
-                <img src="..." class="card-img-top" alt="...">
+                <img src="views/anhThanhVien/dqa.jpg" class="card-img-top" alt="...">
                 <div class="card-body" style="text-align: center;">
                     <h5 class="card-title">Dương Quốc Anh</h5>
                     <p class="card-text">Quản lý dự án</p>

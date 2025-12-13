@@ -31,8 +31,6 @@ include_once("views/layouts/header.php");
                             <th class="col-1">Giá sp</th>
                             <th class="col-1">Ảnh</th>
                             <th class="col-3">Mô tả</th>
-                      
-                            
                         </tr>
                     </thead>
                     <tbody>
@@ -44,8 +42,6 @@ include_once("views/layouts/header.php");
                                 <td><?= $item['price'] ?> VND</td>
                                 <td><img width="100px" src="./<?= $item['img'] ?>" alt=""></td>
                                 <td><?= $item['mota'] ?></td>
-                               
-                              
                             </tr>
                         <?php } ?>
                     </tbody>
