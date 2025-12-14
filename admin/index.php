@@ -20,10 +20,10 @@ $hoaDon = new HoaDonController();
 $thongKe = new ThongKeController();
 $taiKhoan = new TaiKhoanController();
 
-if(isset($_GET['action']) && $_GET['action'] != "") {
+if (isset($_GET['action']) && $_GET['action'] != "") {
     $action = $_GET['action'];
 
-    switch($action) {
+    switch ($action) {
 
         // ----- LOGIN-----
         case 'login':
@@ -100,9 +100,6 @@ if(isset($_GET['action']) && $_GET['action'] != "") {
         case "listthongke":
             $thongKe->index();
             break;
-        case "hienTaiKhoan":
-            $thongKe->hienTaiKhoan();
-            break;
         case "thongke10spnew":
             $thongKe->top10SpNew();
             break;
@@ -130,8 +127,6 @@ if(isset($_GET['action']) && $_GET['action'] != "") {
             $taiKhoan->delete();
             break;
     }
-
 } else {
     $danhMuc->index();
 }
-?>
