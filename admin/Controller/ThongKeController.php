@@ -11,7 +11,7 @@ class ThongKeController
         $this->thongKe = new ThongKe();
     }
 
-    // Phương thức list
+
     public function index()
     {
         $tongDaBan =  $this->thongKe->soLuongBan();
